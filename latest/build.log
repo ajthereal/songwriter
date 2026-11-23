@@ -3,5 +3,39 @@ Xcode 26.3
 Build version 17C529
 swift-driver version: 1.127.15 Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
 Target: arm64-apple-macosx15.0
-== Branch: main  SHA: d257369cb1a324c361509530afda7043345975df
-== No Songwriter.swiftpm yet; skipping build
+== Branch: v1  SHA: 35d3446886bcf64c8eba3d204934ea7501e1c432
+== xcodebuild -list
+Command line invocation:
+    /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/xcodebuild -list
+
+Resolve Package Graph
+the package manifest at '/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift' cannot be accessed (/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift doesn't exist in file system)the package manifest at '/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift' cannot be accessed (/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift doesn't exist in file system)
+
+Resolved source packages:
+  Songwriter.swiftpm: (null)
+
+2026-11-23 03:50:28.329 xcodebuild[1806:8475] Writing error result bundle to /var/folders/9d/l02zfgrs7c16twd3wbpdmhkc0000gn/T/ResultBundle_2026-23-11_03-50-0028.xcresult
+xcodebuild: error: Could not resolve package dependencies:
+  the package manifest at '/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift' cannot be accessed (/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift doesn't exist in file system)
+  the package manifest at '/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift' cannot be accessed (/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift doesn't exist in file system)
+
+== Using scheme: 
+Command line invocation:
+    /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/xcodebuild -scheme  -destination "generic/platform=iOS Simulator" -skipMacroValidation -skipPackagePluginValidation CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+
+Resolve Package Graph
+the package manifest at '/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift' cannot be accessed (/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift doesn't exist in file system)the package manifest at '/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift' cannot be accessed (/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift doesn't exist in file system)
+
+Resolved source packages:
+  Songwriter.swiftpm: (null)
+
+2026-11-23 03:50:31.517 xcodebuild[2011:9473] Writing error result bundle to /var/folders/9d/l02zfgrs7c16twd3wbpdmhkc0000gn/T/ResultBundle_2026-23-11_03-50-0031.xcresult
+xcodebuild: error: Could not resolve package dependencies:
+  the package manifest at '/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift' cannot be accessed (/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift doesn't exist in file system)
+  the package manifest at '/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift' cannot be accessed (/Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift doesn't exist in file system)
+
+== build exit code: 74

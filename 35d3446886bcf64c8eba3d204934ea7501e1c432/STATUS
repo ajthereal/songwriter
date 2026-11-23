@@ -1,0 +1,5 @@
+FAIL
+build=FAIL tests=FAIL branch=v1
+BUILD xcodebuild: error: Could not resolve package dependencies:
+TEST CoreTests/Tests/CoreTests/MIDIAndLoudnessTests.swift:121: error: -[CoreTests.LoudnessTests testAbsoluteGateIgnoresSilence] : XCTAssertEqualWithAccuracy failed: ("-19.993301963206157") is not equal to ("-20.125569976943588") +/- ("0.05")
+TEST Test Case '-[CoreTests.LoudnessTests testAbsoluteGateIgnoresSilence]' failed (0.598 seconds).
