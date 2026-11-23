@@ -3,9 +3,10 @@ Xcode 26.3
 Build version 17C529
 swift-driver version: 1.127.15 Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
 Target: arm64-apple-macosx15.0
-== Branch: v1  SHA: 998847ec3f3a95b565514daefae9288209c3bd20
-== searching AppleProductTypes in /Applications/Xcode_26.3.0.app
-
+== Branch: v1  SHA: 9fdbb0d72f986205ebbcb18011568da3b76a465f
+== searching manifest API dirs
+ManifestAPI
+PluginAPI
 == xcodebuild -list
 Command line invocation:
     /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/xcodebuild -list
@@ -18,7 +19,7 @@ Package: songwriter.swiftpm
 Resolved source packages:
   Songwriter.swiftpm: (null)
 
-2026-11-23 04:09:55.957 xcodebuild[3048:13598] Writing error result bundle to /var/folders/9d/l02zfgrs7c16twd3wbpdmhkc0000gn/T/ResultBundle_2026-23-11_04-09-0055.xcresult
+2026-11-23 04:25:37.903 xcodebuild[6342:22247] Writing error result bundle to /var/folders/9d/l02zfgrs7c16twd3wbpdmhkc0000gn/T/ResultBundle_2026-23-11_04-25-0037.xcresult
 xcodebuild: error: Could not resolve package dependencies:
   Type 'ProductSetting.IOSAppInfo.AppIcon.PlaceholderIcon' has no member 'music'
   /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift:23:42: error: type 'ProductSetting.IOSAppInfo.AppIcon.PlaceholderIcon' has no member 'music'
@@ -45,7 +46,7 @@ Package: songwriter.swiftpm
 Resolved source packages:
   Songwriter.swiftpm: (null)
 
-2026-11-23 04:10:00.972 xcodebuild[3497:15506] Writing error result bundle to /var/folders/9d/l02zfgrs7c16twd3wbpdmhkc0000gn/T/ResultBundle_2026-23-11_04-10-0000.xcresult
+2026-11-23 04:25:42.205 xcodebuild[6976:24426] Writing error result bundle to /var/folders/9d/l02zfgrs7c16twd3wbpdmhkc0000gn/T/ResultBundle_2026-23-11_04-25-0042.xcresult
 xcodebuild: error: Could not resolve package dependencies:
   Type 'ProductSetting.IOSAppInfo.AppIcon.PlaceholderIcon' has no member 'music'
   /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift:23:42: error: type 'ProductSetting.IOSAppInfo.AppIcon.PlaceholderIcon' has no member 'music'
