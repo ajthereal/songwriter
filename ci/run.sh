@@ -22,6 +22,8 @@ if [ -n "$XC" ]; then sudo xcode-select -s "$XC/Contents/Developer"; fi
 BUILD_RC=0
 TEST_RC=0
 
+if [ -f "$ROOT/ci/extra.sh" ]; then bash "$ROOT/ci/extra.sh" 2>&1 | tee -a "$BUILD_LOG"; fi
+
 # ---------- Build ----------
 if [ -d "$ROOT/Songwriter.swiftpm" ]; then
   cd "$ROOT/Songwriter.swiftpm"
