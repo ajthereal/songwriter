@@ -1,0 +1,57 @@
+== Xcode: /Applications/Xcode_26.3.0.app
+Xcode 26.3
+Build version 17C529
+swift-driver version: 1.127.15 Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
+Target: arm64-apple-macosx15.0
+== Branch: v1  SHA: cafda1109bdc4fc87c87d19ed25b83bfbfda26c8
+== xcodebuild -list
+Command line invocation:
+    /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/xcodebuild -list
+
+Resolve Package Graph
+
+Package: songwriter.swiftpm
+
+
+Resolved source packages:
+  Songwriter.swiftpm: (null)
+
+2026-11-23 04:07:30.681 xcodebuild[1456:7345] Writing error result bundle to /var/folders/9d/l02zfgrs7c16twd3wbpdmhkc0000gn/T/ResultBundle_2026-23-11_04-07-0030.xcresult
+xcodebuild: error: Could not resolve package dependencies:
+  Type 'ProductSetting.IOSAppInfo.AppIcon.PlaceholderIcon' has no member 'music'
+  /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift:23:42: error: type 'ProductSetting.IOSAppInfo.AppIcon.PlaceholderIcon' has no member 'music'
+21 |             displayVersion: "0.1",
+22 |             bundleVersion: "1",
+23 |             appIcon: .placeholder(icon: .music),
+   |                                          `- error: type 'ProductSetting.IOSAppInfo.AppIcon.PlaceholderIcon' has no member 'music'
+24 |             accentColor: .presetColor(.red),
+25 |             supportedDeviceFamilies: [
+
+== Using scheme: 
+Command line invocation:
+    /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/xcodebuild -scheme  -destination "generic/platform=iOS Simulator" -skipMacroValidation -skipPackagePluginValidation CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+
+Resolve Package Graph
+
+Package: songwriter.swiftpm
+
+
+Resolved source packages:
+  Songwriter.swiftpm: (null)
+
+2026-11-23 04:07:38.020 xcodebuild[2485:10446] Writing error result bundle to /var/folders/9d/l02zfgrs7c16twd3wbpdmhkc0000gn/T/ResultBundle_2026-23-11_04-07-0038.xcresult
+xcodebuild: error: Could not resolve package dependencies:
+  Type 'ProductSetting.IOSAppInfo.AppIcon.PlaceholderIcon' has no member 'music'
+  /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Package.swift:23:42: error: type 'ProductSetting.IOSAppInfo.AppIcon.PlaceholderIcon' has no member 'music'
+21 |             displayVersion: "0.1",
+22 |             bundleVersion: "1",
+23 |             appIcon: .placeholder(icon: .music),
+   |                                          `- error: type 'ProductSetting.IOSAppInfo.AppIcon.PlaceholderIcon' has no member 'music'
+24 |             accentColor: .presetColor(.red),
+25 |             supportedDeviceFamilies: [
+
+== build exit code: 74
