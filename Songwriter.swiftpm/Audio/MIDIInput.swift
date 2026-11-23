@@ -13,7 +13,11 @@ final class MIDIInput {
     private var client = MIDIClientRef()
     private var port = MIDIPortRef()
     private var started = false
-    private(set) var sourceCount = 0
+    private let scanQueue = DispatchQueue(label: "songwriter.midi.scan")
+    private var connectedSources: [Int32: MIDIEndpointRef] = [:]   // only touched on scanQueue
+    private let lock = NSLock()
+    private var count_ = 0
+    var sourceCount: Int { lock.lock(); defer { lock.unlock() }; return count_ }
 
     func start() {
         guard !started else { return }
@@ -37,15 +41,31 @@ final class MIDIInput {
         rescan()
     }
 
+    /// Connects newly appeared sources and disconnects ones that vanished. Runs on a private serial queue.
     func rescan() {
+        scanQueue.async { [weak self] in self?.performRescan() }
+    }
+
+    private func performRescan() {
         guard port != 0 else { return }
+        var present: [Int32: MIDIEndpointRef] = [:]
         let count = MIDIGetNumberOfSources()
-        var connected = 0
         for i in 0..<count {
             let src = MIDIGetSource(i)
-            if src != 0 && MIDIPortConnectSource(port, src, nil) == noErr { connected += 1 }
+            if src == 0 { continue }
+            var uid: Int32 = 0
+            if MIDIObjectGetIntegerProperty(src, kMIDIPropertyUniqueID, &uid) != noErr { continue }
+            present[uid] = src
         }
-        sourceCount = connected
+        for (uid, src) in connectedSources where present[uid] == nil {
+            MIDIPortDisconnectSource(port, src)
+            connectedSources[uid] = nil
+        }
+        for (uid, src) in present where connectedSources[uid] == nil {
+            if MIDIPortConnectSource(port, src, nil) == noErr { connectedSources[uid] = src }
+        }
+        let connected = connectedSources.count
+        lock.lock(); count_ = connected; lock.unlock()
         DispatchQueue.main.async { self.onSourcesChanged?(connected) }
     }
 

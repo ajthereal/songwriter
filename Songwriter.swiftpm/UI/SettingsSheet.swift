@@ -38,8 +38,9 @@ struct SettingsSheet: View {
                 Section("MIDI and audio devices") {
                     Text(session.midiSourceCount > 0
                          ? "\(session.midiSourceCount) MIDI source\(session.midiSourceCount == 1 ? "" : "s") connected."
-                         : "No MIDI keyboard found. Plug one in with USB-C, or pair a Bluetooth keyboard in an app that offers Bluetooth MIDI pairing, then come back.")
+                         : "No MIDI keyboard found. Plug it in with USB-C, or tap Bluetooth MIDI to pair it.")
                         .font(Theme.ui(15))
+                    BluetoothMIDIButton()
                     Text("Audio output: \(AudioSessionManager.shared.outputName). Input: \(AudioSessionManager.shared.inputName).")
                         .font(Theme.ui(15))
                 }

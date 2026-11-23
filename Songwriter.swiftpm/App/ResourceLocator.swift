@@ -5,7 +5,6 @@ enum ResourceLocator {
     private static func candidateBundles() -> [Bundle] {
         var bundles: [Bundle] = [Bundle.main]
         bundles.append(contentsOf: Bundle.allBundles)
-        bundles.append(contentsOf: Bundle.allFrameworks)
         if let res = Bundle.main.resourceURL,
            let items = try? FileManager.default.contentsOfDirectory(at: res, includingPropertiesForKeys: nil) {
             for u in items where u.pathExtension == "bundle" {
@@ -25,8 +24,13 @@ enum ResourceLocator {
         }
         // Last resort: walk the bundle directories.
         let target = name + "." + ext
-        for b in bundles {
-            if let found = search(root: b.bundleURL, fileName: target) { return found }
+        var roots: [URL] = [Bundle.main.bundleURL]
+        if let res = Bundle.main.resourceURL,
+           let items = try? FileManager.default.contentsOfDirectory(at: res, includingPropertiesForKeys: nil) {
+            roots.append(contentsOf: items.filter { $0.pathExtension == "bundle" })
+        }
+        for root in roots {
+            if let found = search(root: root, fileName: target) { return found }
         }
         return nil
     }

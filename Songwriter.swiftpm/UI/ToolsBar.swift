@@ -48,6 +48,7 @@ struct ToolsBar: View {
                     .font(Theme.serifItalic(13))
                     .foregroundColor(Theme.ink2)
                     .lineLimit(1)
+                BluetoothMIDIButton()
             }
             .padding(.horizontal, 12)
         }
@@ -65,7 +66,7 @@ struct ToolsBar: View {
     private var midiStatus: String {
         session.midiSourceCount > 0
             ? "\(session.midiSourceCount) MIDI source\(session.midiSourceCount == 1 ? "" : "s") connected"
-            : "No MIDI keyboard found. Connect via USB-C, or pair Bluetooth in the Audio MIDI Setup app."
+            : "No MIDI keyboard found. Plug it in with USB-C, or tap Bluetooth MIDI to pair it."
     }
 
     private func split() {
