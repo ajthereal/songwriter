@@ -3,7 +3,7 @@ Xcode 26.3
 Build version 17C529
 swift-driver version: 1.127.15 Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
 Target: arm64-apple-macosx15.0
-== Branch: v1  SHA: fa5f262d06e7bb73250e9e7d7675eac533e765dc
+== Branch: v1  SHA: 3f321aca3ef8ba6ccb242dfb37658ecec2ba9cf9
 CompilerPluginSupport.swiftmodule
 PackageDescription.swiftmodule
 /Applications/Xcode_26.3.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/ManifestAPI/CompilerPluginSupport.swiftmodule:
@@ -21,7 +21,7 @@ Command line invocation:
     /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/xcodebuild -list
 
 Resolve Package Graph
-2026-11-23 05:10:36.904 xcodebuild[1183:6409] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+2026-11-23 05:15:04.558 xcodebuild[1265:6441] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
 
 
 Resolved source packages:
@@ -40,7 +40,7 @@ Build settings from command line:
     CODE_SIGNING_REQUIRED = NO
 
 Resolve Package Graph
-2026-11-23 05:10:42.853 xcodebuild[1681:8349] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+2026-11-23 05:15:07.644 xcodebuild[1434:7243] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
 
 
 Resolved source packages:
@@ -65,9 +65,9 @@ GatherProvisioningInputs
 
 CreateBuildDescription
 
-ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -x c -c /dev/null
-
 ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/AppPlaygroundDefaultAssetCatalog.xcassets
+
+ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -x c -c /dev/null
 
 ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/actool --version --output-format xml1
 
@@ -75,8 +75,12 @@ ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/X
 
 ExecuteExternalTool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
 
-Build description signature: def026740899d049709f9eedb37fdc85
-Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/XCBuildData/def026740899d049709f9eedb37fdc85.xcbuilddata
+Build description signature: 51ff05c3d2133846492ed88d2e1d7339
+Build description path: /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/XCBuildData/51ff05c3d2133846492ed88d2e1d7339.xcbuilddata
+ClangStatCache /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -o /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache
+
 CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products
@@ -84,10 +88,6 @@ CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/Songwrite
 CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex
-
-ClangStatCache /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -o /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache
 
 CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
@@ -101,21 +101,17 @@ CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/Songwrite
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/ExplicitPrecompiledModules
 
-CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/PackageFrameworks
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/PackageFrameworks
-
 CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
 
-WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/empty-Songwriter.plist (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    write-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/empty-Songwriter.plist
-
 WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter.DependencyStaticMetadataFileList (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
     write-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/empty-Songwriter.plist (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    write-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/empty-Songwriter.plist
 
 WriteAuxiliaryFile /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter.DependencyMetadataFileList (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
@@ -181,6 +177,10 @@ MkDir /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykic
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
     /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app
 
+CreateBuildDirectory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/PackageFrameworks
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    builtin-create-build-directory /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/PackageFrameworks
+
 GenerateAppPlaygroundAssetCatalog /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/AppPlaygroundDefaultAssetCatalog.xcassets (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
     /Applications/Xcode_26.3.app/Contents/Developer/usr/bin/appleProductTypesTool -generatePlaceholderAppIconAsset -placeholderAppIconEnumName cloud -appIconAssetName __PlaceholderAppIcon -generateAccentColorAsset -accentColorPresetName red -accentColorAssetName __PresetAccentColor -output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/AppPlaygroundDefaultAssetCatalog.xcassets
@@ -201,13 +201,13 @@ MkDir /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykic
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
     /bin/mkdir -p /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_output/thinned
 
-CreateUniversalBinary /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/__preview.dylib normal arm64\ x86_64 (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/__preview.dylib /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/__preview.dylib -output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/__preview.dylib
-
 CpResource /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Spectral-Regular.ttf /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Resources/Fonts/Spectral-Regular.ttf (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
     builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Resources/Fonts/Spectral-Regular.ttf /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app
+
+CreateUniversalBinary /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/__preview.dylib normal arm64\ x86_64 (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/__preview.dylib /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/__preview.dylib -output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/__preview.dylib
 
 CpResource /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Spectral-OFL.txt /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Resources/Licenses/Spectral-OFL.txt (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
@@ -267,165 +267,173 @@ CompileAssetCatalogVariant thinned /Users/runner/Library/Developer/Xcode/Derived
 /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_output/thinned/__PlaceholderAppIcon76x76@2x~ipad.png
 
 
-SwiftDriver Songwriter normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    builtin-SwiftDriver -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Songwriter -Onone -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name songwriter_swiftpm -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_const_extract_protocols.json -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
-
 SwiftDriver Songwriter normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     builtin-SwiftDriver -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Songwriter -Onone -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target x86_64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name songwriter_swiftpm -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter_const_extract_protocols.json -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources-normal/x86_64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/x86_64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ptrcheck-8SPSIMEAXRJS9ZVKQFIJXEMO9.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ptrauth-8D4NH75M6ZHAXLFWINPMZG84A.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_AvailabilityInternal-66PMRD5RMA2OSBL57QYFQGF21.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftShims-2NHBA68CQIGMYK72EVWLB8XW.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdarg-8V5CXXDU9KYC7JFEMHH7A9YDT.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ptrauth-2XXSBBIBBR37UVH1ROITQE3EC.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stddef-4KJAEZ6FWA4R1FJCP9K9NWPXI.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_SwiftConcurrencyShims-BMJ09AFLK38X0QGI8JK2B96QM.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_SwiftConcurrencyShims-EOVAI7LMMPM1VV96CKZW118KQ.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdbool-C9S1U5OBDXPT8A8346B3N1TBE.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stddef-79QWFP1Q2UWUJWG9WOAIFOPKB.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_AvailabilityInternal-32IP4EO3SML63XSTRW2AZI6S6.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdbool-AG66LPWB6D3ZEOJSCUP9CTYT0.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DeveloperToolsSupport-7VJIM92765B9EM93K14XK8J4L.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation1-E95P3I4WARFFRFI4PW0SC8AOR.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_float-8S4TLBVBKRLGKDEZM2KVDJ9JN.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DeveloperToolsSupport-CAPPNYU4XHT2ZMYVGWCWCN9XS.pcm
+SwiftDriver Songwriter normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    builtin-SwiftDriver -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Songwriter -Onone -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name songwriter_swiftpm -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_const_extract_protocols.json -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
 
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdarg-E35V7CN72TVUBJ5WSGCYJ1HEI.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_limits-59880DZWV531D3VQY42G37H1.pcm
-
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftShims-9QJT83CCGYQOOAB5YRCH80OKQ.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation2-1X7JZUP7EZFJXXBS7UNHZGU96.pcm
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ptrauth-2XXSBBIBBR37UVH1ROITQE3EC.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ptrcheck-22JFFANZK8AAX2NF94EHYIAHZ.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_float-D0J53W3COCFCKLRDJYJ8OGS70.pcm
 
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stddef-79QWFP1Q2UWUJWG9WOAIFOPKB.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_AvailabilityInternal-32IP4EO3SML63XSTRW2AZI6S6.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DeveloperToolsSupport-7VJIM92765B9EM93K14XK8J4L.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stddef-4KJAEZ6FWA4R1FJCP9K9NWPXI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdarg-8V5CXXDU9KYC7JFEMHH7A9YDT.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdbool-AG66LPWB6D3ZEOJSCUP9CTYT0.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ptrauth-8D4NH75M6ZHAXLFWINPMZG84A.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DeveloperToolsSupport-CAPPNYU4XHT2ZMYVGWCWCN9XS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftShims-2NHBA68CQIGMYK72EVWLB8XW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdbool-C9S1U5OBDXPT8A8346B3N1TBE.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_float-8S4TLBVBKRLGKDEZM2KVDJ9JN.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ptrcheck-8SPSIMEAXRJS9ZVKQFIJXEMO9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_SwiftConcurrencyShims-BMJ09AFLK38X0QGI8JK2B96QM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_AvailabilityInternal-66PMRD5RMA2OSBL57QYFQGF21.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation1-E95P3I4WARFFRFI4PW0SC8AOR.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_SwiftConcurrencyShims-EOVAI7LMMPM1VV96CKZW118KQ.pcm
+
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation1-93SPP96XXYJ456RW48QZLM0VL.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_tgmath-3D35C2D8JC9LHX7E5ITSXWHR2.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation2-1X7JZUP7EZFJXXBS7UNHZGU96.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_limits-59880DZWV531D3VQY42G37H1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation2-DK25IWJSR6DOSCLC9ZXGDK6TN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_limits-7YPGJ0OX33YEGDAZS05EP8I5I.pcm
 
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdint-AGPKWJLFVOJ2HKIM9HVNN3BZ4.pcm
 
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/sys_types-7D1S0QK2EG27P14QY2DVQIB6.pcm
 
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation2-DK25IWJSR6DOSCLC9ZXGDK6TN.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation3-22284L81SVLM6C2A0M8J6IAM7.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_limits-7YPGJ0OX33YEGDAZS05EP8I5I.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_tgmath-8J0II5PVRRZH2JG4WKGBFTRXP.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_inttypes-J85SKTOAMNW1LIU920E46V0K.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_intrinsics-7U9J8C5UBJRO06WJPZQY7U27L.pcm
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/sys_types-1QUI2K0FNNNTK44RDWLZJ1W7Y.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdint-1244MJNJRCIHFW58VLCKX0X3W.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Darwin-EA053H4ZZMK8GKLM85N6MQLHG.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation3-22284L81SVLM6C2A0M8J6IAM7.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdatomic-2EYBJ92Z921JTQ6AUUX3ZZ0SD.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdatomic-NRDPM2ZQCT17PDKR7SKWXZPW.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/simd-7TW49NFXFABE28NFWP6T0MZAH.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_intrinsics-3VZ5EHFBG57HD8YT6HRIKO44I.pcm
-
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_DarwinFoundation3-8JI9NP37RJK8NK78HI57S9TGN.pcm
 
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/simd-E7KFWL72T83FVKXI950AAZGWI.pcm
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_tgmath-8J0II5PVRRZH2JG4WKGBFTRXP.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_intrinsics-7U9J8C5UBJRO06WJPZQY7U27L.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_tgmath-3D35C2D8JC9LHX7E5ITSXWHR2.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_inttypes-8J8FWN6D9ZJO6TU6ST6FCGB3U.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Spatial-9M6IW2EIOHTVQSD65SAFZY3X.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_inttypes-J85SKTOAMNW1LIU920E46V0K.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Darwin-12SBS1UBX89WTB62M4FE90JG5.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ObjectiveC-8B3S14ZU6QTMVMXCR7AOBLA5R.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Darwin-EA053H4ZZMK8GKLM85N6MQLHG.pcm
 
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Spatial-B1ZQ71ZA8DDMRGM4RAFUIRNWG.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_object-8Y7441O1IB0TWZO40LTO0VVDA.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/simd-7TW49NFXFABE28NFWP6T0MZAH.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MachO-6SK0OK0D29B8G0EE1FBWN08TK.pcm
 
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MachO-5DGTSW6XPTRBLC109DHV2TL00.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_workgroup-2WDNYA9YVIA8BYGPK3S7WTT5P.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_stdatomic-2EYBJ92Z921JTQ6AUUX3ZZ0SD.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ObjectiveC-8B3S14ZU6QTMVMXCR7AOBLA5R.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ObjectiveC-ECTPI3NLFU6IR9BL5B97DPI7Y.pcm
 
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/sys_types-1QUI2K0FNNNTK44RDWLZJ1W7Y.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_object-8Y7441O1IB0TWZO40LTO0VVDA.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Dispatch-6BYHFDRN0N55QAAJYPOYOAK46.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Spatial-9M6IW2EIOHTVQSD65SAFZY3X.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_object-7STPAUUQLXMKPBCU5W55J859Y.pcm
 
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_workgroup-2WDNYA9YVIA8BYGPK3S7WTT5P.pcm
+
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os_workgroup-6DB5XUX4ETO6GHQI8HPMA9PYY.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/dnssd-EGWLYRAZ65NHMKQOGAU4NBJKP.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreFoundation-B0HPX01UW1NEFJW1LGHZ3QLWG.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Dispatch-6BYHFDRN0N55QAAJYPOYOAK46.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Dispatch-BBGSDEIWJIF61ZPIPDEBI1AT7.pcm
 
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/_Builtin_intrinsics-3VZ5EHFBG57HD8YT6HRIKO44I.pcm
+
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/XPC-DXA1D3FVJY0RGF7Q3CG0XHLPC.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/XPC-F5CBQ91JO83INI2AX4DJO2928.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/dnssd-C13UYTJ7A8QE726D1EWGH0OK.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudioTypes-8D0MXJPQF52HWVY1ZQJQ3HDMQ.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Security-S6RT9730ZPM7PHV53PSLHPGZ.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os-UTANO3ISONE3896IE5U24ERO.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudio-4BLC2KBW1YZ379EEJELNMBHWR.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CFNetwork-2TAX1IZFTCUMKMN2SZIXXU336.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreFoundation-4TKWWG1OUZVDZG9PWAKR8CW9T.pcm
 
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os-2MZA1R9WCNTMMMCK9FI4AYJK5.pcm
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/XPC-F5CBQ91JO83INI2AX4DJO2928.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Foundation-4UPJY4DQAK75OKBD48A2VYGU.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreGraphics-ESM31P0BLO5MBN5YCRP0RRK3C.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudioTypes-3EVIBPTUEP6SOODCO70K5EOL4.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreText-4NDCV1MHZ0U7S5YBREG5IPNI6.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CFNetwork-2QF4BT5LY400DHHHOUU1T1LIK.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os-UTANO3ISONE3896IE5U24ERO.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Security-687WFTR09WYMX73YYHBQVKKNU.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UserNotifications-KI101RB0F70URZGIJHIVT1DO.pcm
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/simd-E7KFWL72T83FVKXI950AAZGWI.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMIDI-E1ZTTABVPOX5D0OWV5UXTGTCO.pcm
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CFNetwork-2QF4BT5LY400DHHHOUU1T1LIK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/os-2MZA1R9WCNTMMMCK9FI4AYJK5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreGraphics-4T7XDSGAYECPJPJ584GOY1RRF.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreFoundation-B0HPX01UW1NEFJW1LGHZ3QLWG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ImageIO-51XEYZF8VERC7CFBVNXMURKXC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreText-7HNXBWQSBG0NW9VJHMJLDOCK1.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Security-S6RT9730ZPM7PHV53PSLHPGZ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/dnssd-EGWLYRAZ65NHMKQOGAU4NBJKP.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CFNetwork-2TAX1IZFTCUMKMN2SZIXXU336.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Foundation-7ZO4HOJLWDTP52QY3V0AZYIRE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudioTypes-3EVIBPTUEP6SOODCO70K5EOL4.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Foundation-4UPJY4DQAK75OKBD48A2VYGU.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudioTypes-8D0MXJPQF52HWVY1ZQJQ3HDMQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreData-EYJACF2CQELUKU4XD9TM3HJI9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OpenGLES-7UK0VFGTJCGKTR18WDB1HPDLC.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreTransferable-70CVMY69QGSVITGSGY9WQV61K.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UniformTypeIdentifiers-7BUQEH5F6CY618ROUMC8N8ZWU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Symbols-4YU0RDEC90GW608N9KO00GP3G.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OSLog-EQZ0NX3D8A7X958BEMR3NGPGF.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UserNotifications-KI101RB0F70URZGIJHIVT1DO.pcm
 
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OpenGLES-13J0IU3U0WTWM45BZERMO1GRW.pcm
 
@@ -433,125 +441,203 @@ SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/
 
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIUtilities-7RI3SHW67C3V3ZUPDE3H4D1J0.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AudioToolbox-3RHPC6FOYWA7TUZGYP6GD37Z1.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UniformTypeIdentifiers-7BUQEH5F6CY618ROUMC8N8ZWU.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/FileProvider-1SNSG2UCTKFIHHXJXOSNQ3KF2.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Foundation-7ZO4HOJLWDTP52QY3V0AZYIRE.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Accessibility-DP1WYCKRRQAJ91JPU23R1L8VO.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AudioUnit-4L32ULGY7UBZ6YJJPLDOY9XKP.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudio-SCXUSVYMF2KEJGZB2QOFQWKQ.pcm
-
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreData-8VGUOIWFLSWVLXRBNL5QGX7K6.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Symbols-7NAMINHXL4SRZCUALQB6BCIQE.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/IOSurface-COCI0Y8KFBSXB0Y2Y4NQ1BAAR.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreTransferable-70CVMY69QGSVITGSGY9WQV61K.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/IOSurface-624BFD2W43MNQ7UCUCB36JQ40.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UserNotifications-1RKSD3TZJXAHYG72NF9C4ECU7.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMIDI-DX4SP8V2K4H5300QF81KY0EOI.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreData-EYJACF2CQELUKU4XD9TM3HJI9.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UniformTypeIdentifiers-AVL5PEGWK4WK0VH5FP01C3UE1.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AudioToolbox-EODBKRENJHWKLQQJZR1T72EGW.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIUtilities-3WIFR2U9YA9TXGKK52Z1MHP0R.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Metal-28FF4GC55PUTA1950GN5LGOUV.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudio-4BLC2KBW1YZ379EEJELNMBHWR.pcm
 
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DataDetection-77ZS0CFKCYJ3E90BRASL0E7RQ.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/IOSurface-COCI0Y8KFBSXB0Y2Y4NQ1BAAR.pcm
 
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AudioUnit-LP8AB78CDI2KQBEJKRAJJXL5.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreTransferable-8A20DSRDZG3EGVE31QULZP6VN.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ImageIO-DO3NFLO1C0HA9A5SU8C2FEAW7.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreVideo-53CD9CS1XNNSI584LCPTD7PCE.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Symbols-4YU0RDEC90GW608N9KO00GP3G.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DataDetection-82XH3I0Z6IRAR4G3DGG201NHJ.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreImage-4EBZ3CVTUI9JA3UDLS0CY9Z5M.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMedia-4TAGEQO80JW3F8TBKD11A0YMB.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OpenGLES-7UK0VFGTJCGKTR18WDB1HPDLC.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Metal-I1CCT2ZU0ASG46JU1F2K2BVH.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MediaToolbox-EEOK5EO6VX7MQVYVLJQ3K5MQ5.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFAudio-CE9ACXHSA96H2J0OOXW37BEVI.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/OSLog-EQZ0NX3D8A7X958BEMR3NGPGF.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/QuartzCore-CX9B7FG2AG8SVTQ7FO8TEXT3N.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Network-1K4X8D9ENK1COCN8D0N69YSYP.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreGraphics-4T7XDSGAYECPJPJ584GOY1RRF.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUICore-E9Q8VQ7OVJE9203Z2CH1DKNTQ.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVRouting-41K7JT67OMTSN6GGZDOY101VC.pcm
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMIDI-DX4SP8V2K4H5300QF81KY0EOI.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Accessibility-C5MXDFDP5UG1N6TCQKVQNVOE9.pcm
 
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreText-7HNXBWQSBG0NW9VJHMJLDOCK1.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ImageIO-51XEYZF8VERC7CFBVNXMURKXC.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreVideo-A6CYMO9K6XOXW1NECPWGM1VCL.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIKit-5RDXVLLZ5XC1M8ZL4AGE4YYGN.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/FileProvider-ET3HDUXYI6ZJJWWJQDEGMTXH6.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/QuartzCore-4EDSA7IS4S7IKRJJAG8O3NXSA.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMedia-12TDM9ZFY582IZ5KE8ZHYWES.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUICore-2NBE1QEBMJOEWCE0G4M4X332Y.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFAudio-A042UYNR1FCNGUU8CUR2QAOJ6.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MediaToolbox-C3S6MSCDTV1ACSXWX4ILEPOA7.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreImage-9ZRM7FJ48OB8J25XTJBL7UW4B.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFoundation-4YBQWFB0M8C9VYGREF91OV2BM.pcm
-
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIKit-AVEFYSDF2ZULJ59654MAEKWCV.pcm
-
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUI-4A7RST7M7QT3H2WKVXXHPDZ7F.pcm
-
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Network-6CN17Y3TBUMTLL6P042VT3AHO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DataDetection-77ZS0CFKCYJ3E90BRASL0E7RQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AudioToolbox-EODBKRENJHWKLQQJZR1T72EGW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreTransferable-8A20DSRDZG3EGVE31QULZP6VN.pcm
 
 SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVRouting-98BYALQKB9TU29CW5VKACY99A.pcm
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFoundation-718J0KZVOI2CX5TYBRB0JQQ8D.pcm
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudio-SCXUSVYMF2KEJGZB2QOFQWKQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/FileProvider-ET3HDUXYI6ZJJWWJQDEGMTXH6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AudioUnit-LP8AB78CDI2KQBEJKRAJJXL5.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/IOSurface-624BFD2W43MNQ7UCUCB36JQ40.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Symbols-7NAMINHXL4SRZCUALQB6BCIQE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UniformTypeIdentifiers-AVL5PEGWK4WK0VH5FP01C3UE1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/dnssd-C13UYTJ7A8QE726D1EWGH0OK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Metal-I1CCT2ZU0ASG46JU1F2K2BVH.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMIDI-E1ZTTABVPOX5D0OWV5UXTGTCO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Network-1K4X8D9ENK1COCN8D0N69YSYP.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AudioToolbox-3RHPC6FOYWA7TUZGYP6GD37Z1.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVRouting-41K7JT67OMTSN6GGZDOY101VC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreVideo-A6CYMO9K6XOXW1NECPWGM1VCL.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Spatial-B1ZQ71ZA8DDMRGM4RAFUIRNWG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/QuartzCore-4EDSA7IS4S7IKRJJAG8O3NXSA.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AudioUnit-4L32ULGY7UBZ6YJJPLDOY9XKP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUICore-2NBE1QEBMJOEWCE0G4M4X332Y.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreImage-9ZRM7FJ48OB8J25XTJBL7UW4B.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/DataDetection-82XH3I0Z6IRAR4G3DGG201NHJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMedia-12TDM9ZFY582IZ5KE8ZHYWES.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreGraphics-ESM31P0BLO5MBN5YCRP0RRK3C.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UserNotifications-1RKSD3TZJXAHYG72NF9C4ECU7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MediaToolbox-C3S6MSCDTV1ACSXWX4ILEPOA7.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/FileProvider-1SNSG2UCTKFIHHXJXOSNQ3KF2.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreText-4NDCV1MHZ0U7S5YBREG5IPNI6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIKit-AVEFYSDF2ZULJ59654MAEKWCV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFAudio-A042UYNR1FCNGUU8CUR2QAOJ6.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/ImageIO-DO3NFLO1C0HA9A5SU8C2FEAW7.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Accessibility-DP1WYCKRRQAJ91JPU23R1L8VO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFoundation-4YBQWFB0M8C9VYGREF91OV2BM.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Metal-28FF4GC55PUTA1950GN5LGOUV.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreVideo-53CD9CS1XNNSI584LCPTD7PCE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudioKit-DNUDN8G51QCAXQE3FKALT7ZC6.pcm
 
 SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUI-9VJS0ASR8ALT9ZMK87XJPHLGS.pcm
 
-SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudioKit-DNUDN8G51QCAXQE3FKALT7ZC6.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/QuartzCore-CX9B7FG2AG8SVTQ7FO8TEXT3N.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreImage-4EBZ3CVTUI9JA3UDLS0CY9Z5M.pcm
 
 SwiftEmitModule normal arm64 Emitting\ module\ for\ Songwriter (in target 'Songwriter' from project 'Songwriter')
 
 EmitSwiftModule normal arm64 (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUICore-E9Q8VQ7OVJE9203Z2CH1DKNTQ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/UIKit-5RDXVLLZ5XC1M8ZL4AGE4YYGN.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreMedia-4TAGEQO80JW3F8TBKD11A0YMB.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/SwiftUI-4A7RST7M7QT3H2WKVXXHPDZ7F.pcm
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for Songwriter (in target 'Songwriter' from project 'Songwriter')
+
+SwiftDriver\ Compilation\ Requirements Songwriter normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Songwriter -Onone -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name songwriter_swiftpm -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_const_extract_protocols.json -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFAudio-CE9ACXHSA96H2J0OOXW37BEVI.pcm
+
+Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftdoc (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftdoc /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.abi.json (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.abi.json /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftsourceinfo (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftsourceinfo /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/MediaToolbox-EEOK5EO6VX7MQVYVLJQ3K5MQ5.pcm
+
+SwiftCompile normal arm64 Compiling\ AppState.swift,\ ErrorCenter.swift,\ ProjectSession.swift,\ ResourceLocator.swift,\ Settings.swift,\ SongwriterApp.swift,\ AudioEngine.swift,\ AudioGraph.swift,\ AudioRecorder.swift,\ AudioSessionManager.swift,\ Bouncer.swift,\ MIDIInput.swift,\ ExportDocuments.swift,\ LeadSheetPDF.swift,\ Loudness.swift,\ MIDIFileWriter.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/AppState.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ErrorCenter.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ProjectSession.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ResourceLocator.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/Settings.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/SongwriterApp.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioEngine.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioGraph.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioRecorder.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioSessionManager.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/Bouncer.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/MIDIInput.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/ExportDocuments.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/LeadSheetPDF.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/Loudness.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/MIDIFileWriter.swift (in target 'Songwriter' from project 'Songwriter')
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/AppState.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ErrorCenter.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ProjectSession.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ResourceLocator.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/Settings.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/SongwriterApp.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioEngine.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioGraph.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioRecorder.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioSessionManager.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/Bouncer.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/MIDIInput.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/ExportDocuments.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/LeadSheetPDF.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/Loudness.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/MIDIFileWriter.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
@@ -617,119 +703,9 @@ SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.sw
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudioKit-B7PKUNAKO1QOOKIM4QUG69BZZ.pcm
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/AVFoundation-718J0KZVOI2CX5TYBRB0JQQ8D.pcm
 
-SwiftDriverJobDiscovery normal arm64 Emitting module for Songwriter (in target 'Songwriter' from project 'Songwriter')
-
-SwiftDriver\ Compilation\ Requirements Songwriter normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Songwriter -Onone -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name songwriter_swiftpm -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_const_extract_protocols.json -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
-
-SwiftEmitModule normal x86_64 Emitting\ module\ for\ Songwriter (in target 'Songwriter' from project 'Songwriter')
-
-EmitSwiftModule normal x86_64 (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.swiftmodule
-
-SwiftDriverJobDiscovery normal x86_64 Emitting module for Songwriter (in target 'Songwriter' from project 'Songwriter')
-
-SwiftDriver\ Compilation\ Requirements Songwriter normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Songwriter -Onone -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target x86_64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name songwriter_swiftpm -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter_const_extract_protocols.json -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources-normal/x86_64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/x86_64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftdoc (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftdoc /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.swiftdoc
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.abi.json (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.abi.json /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/arm64-apple-ios-simulator.abi.json
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftsourceinfo (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftsourceinfo /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.swiftmodule /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftmodule (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftmodule /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.swiftmodule
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftdoc (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftdoc /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.abi.json /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.abi.json (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.abi.json /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.abi.json
-
-Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftsourceinfo (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftsourceinfo /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo
-
-SwiftCompile normal x86_64 Compiling\ SunoPack.swift,\ Chord.swift,\ DemoSong.swift,\ Key.swift,\ Song.swift,\ SongOps.swift,\ ProjectStore.swift,\ UndoStack.swift,\ BandGenerator.swift,\ ChartLayout.swift,\ BluetoothMIDI.swift,\ BounceSheet.swift,\ ChartScreen.swift,\ ChordPickerSheet.swift,\ Components.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/SunoPack.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Chord.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/DemoSong.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Key.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Song.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/SongOps.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Store/ProjectStore.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Store/UndoStack.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Theory/BandGenerator.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Theory/ChartLayout.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/BluetoothMIDI.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/BounceSheet.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ChartScreen.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ChordPickerSheet.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Components.swift (in target 'Songwriter' from project 'Songwriter')
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/SunoPack.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Chord.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/DemoSong.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Key.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Song.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/SongOps.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Store/ProjectStore.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Store/UndoStack.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Theory/BandGenerator.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Theory/ChartLayout.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/BluetoothMIDI.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/BounceSheet.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ChartScreen.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ChordPickerSheet.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Components.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
+SwiftDriverJobDiscovery normal arm64 Compiling EditorView.swift, HeaderView.swift, LaneView.swift, MainView.swift, RegionView.swift, RulerView.swift, Scroll2D.swift, SettingsSheet.swift, Sheets.swift, SongsView.swift, Theme.swift, ToolsBar.swift, TrackHeaderView.swift, TracksScreen.swift, WaveformStore.swift (in target 'Songwriter' from project 'Songwriter')
 
 SwiftCompile normal arm64 Compiling\ SunoPack.swift,\ Chord.swift,\ DemoSong.swift,\ Key.swift,\ Song.swift,\ SongOps.swift,\ ProjectStore.swift,\ UndoStack.swift,\ BandGenerator.swift,\ ChartLayout.swift,\ BluetoothMIDI.swift,\ BounceSheet.swift,\ ChartScreen.swift,\ ChordPickerSheet.swift,\ Components.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/SunoPack.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Chord.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/DemoSong.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Key.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Song.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/SongOps.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Store/ProjectStore.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Store/UndoStack.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Theory/BandGenerator.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Theory/ChartLayout.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/BluetoothMIDI.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/BounceSheet.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ChartScreen.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ChordPickerSheet.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Components.swift (in target 'Songwriter' from project 'Songwriter')
 
@@ -793,72 +769,88 @@ SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.sw
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftDriverJobDiscovery normal arm64 Compiling EditorView.swift, HeaderView.swift, LaneView.swift, MainView.swift, RegionView.swift, RulerView.swift, Scroll2D.swift, SettingsSheet.swift, Sheets.swift, SongsView.swift, Theme.swift, ToolsBar.swift, TrackHeaderView.swift, TracksScreen.swift, WaveformStore.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftDriverJobDiscovery normal arm64 Compiling AppState.swift, ErrorCenter.swift, ProjectSession.swift, ResourceLocator.swift, Settings.swift, SongwriterApp.swift, AudioEngine.swift, AudioGraph.swift, AudioRecorder.swift, AudioSessionManager.swift, Bouncer.swift, MIDIInput.swift, ExportDocuments.swift, LeadSheetPDF.swift, Loudness.swift, MIDIFileWriter.swift (in target 'Songwriter' from project 'Songwriter')
 
-SwiftDriverJobDiscovery normal x86_64 Compiling SunoPack.swift, Chord.swift, DemoSong.swift, Key.swift, Song.swift, SongOps.swift, ProjectStore.swift, UndoStack.swift, BandGenerator.swift, ChartLayout.swift, BluetoothMIDI.swift, BounceSheet.swift, ChartScreen.swift, ChordPickerSheet.swift, Components.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/CoreAudioKit-B7PKUNAKO1QOOKIM4QUG69BZZ.pcm
 
-SwiftCompile normal x86_64 Compiling\ EditorView.swift,\ HeaderView.swift,\ LaneView.swift,\ MainView.swift,\ RegionView.swift,\ RulerView.swift,\ Scroll2D.swift,\ SettingsSheet.swift,\ Sheets.swift,\ SongsView.swift,\ Theme.swift,\ ToolsBar.swift,\ TrackHeaderView.swift,\ TracksScreen.swift,\ WaveformStore.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/EditorView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/HeaderView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/LaneView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/MainView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/RegionView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/RulerView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Scroll2D.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/SettingsSheet.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Sheets.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/SongsView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Theme.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ToolsBar.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/TrackHeaderView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/TracksScreen.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/WaveformStore.swift (in target 'Songwriter' from project 'Songwriter')
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/EditorView.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftEmitModule normal x86_64 Emitting\ module\ for\ Songwriter (in target 'Songwriter' from project 'Songwriter')
+
+EmitSwiftModule normal x86_64 (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/HeaderView.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 Compiling\ SunoPack.swift,\ Chord.swift,\ DemoSong.swift,\ Key.swift,\ Song.swift,\ SongOps.swift,\ ProjectStore.swift,\ UndoStack.swift,\ BandGenerator.swift,\ ChartLayout.swift,\ BluetoothMIDI.swift,\ BounceSheet.swift,\ ChartScreen.swift,\ ChordPickerSheet.swift,\ Components.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/SunoPack.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Chord.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/DemoSong.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Key.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Song.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/SongOps.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Store/ProjectStore.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Store/UndoStack.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Theory/BandGenerator.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Theory/ChartLayout.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/BluetoothMIDI.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/BounceSheet.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ChartScreen.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ChordPickerSheet.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Components.swift (in target 'Songwriter' from project 'Songwriter')
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/SunoPack.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/LaneView.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Chord.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/MainView.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/DemoSong.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/RegionView.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Key.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/RulerView.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/Song.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Scroll2D.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Model/SongOps.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/SettingsSheet.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Store/ProjectStore.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Sheets.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Store/UndoStack.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/SongsView.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Theory/BandGenerator.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Theme.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Theory/ChartLayout.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ToolsBar.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/BluetoothMIDI.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/TrackHeaderView.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/BounceSheet.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/TracksScreen.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ChartScreen.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/WaveformStore.swift (in target 'Songwriter' from project 'Songwriter')
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ChordPickerSheet.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Components.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal x86_64 Emitting module for Songwriter (in target 'Songwriter' from project 'Songwriter')
+
+SwiftDriver\ Compilation\ Requirements Songwriter normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Songwriter -Onone -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target x86_64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name songwriter_swiftpm -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter_const_extract_protocols.json -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources-normal/x86_64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/x86_64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling SunoPack.swift, Chord.swift, DemoSong.swift, Key.swift, Song.swift, SongOps.swift, ProjectStore.swift, UndoStack.swift, BandGenerator.swift, ChartLayout.swift, BluetoothMIDI.swift, BounceSheet.swift, ChartScreen.swift, ChordPickerSheet.swift, Components.swift (in target 'Songwriter' from project 'Songwriter')
 
 SwiftCompile normal x86_64 Compiling\ AppState.swift,\ ErrorCenter.swift,\ ProjectSession.swift,\ ResourceLocator.swift,\ Settings.swift,\ SongwriterApp.swift,\ AudioEngine.swift,\ AudioGraph.swift,\ AudioRecorder.swift,\ AudioSessionManager.swift,\ Bouncer.swift,\ MIDIInput.swift,\ ExportDocuments.swift,\ LeadSheetPDF.swift,\ Loudness.swift,\ MIDIFileWriter.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/AppState.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ErrorCenter.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ProjectSession.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ResourceLocator.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/Settings.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/SongwriterApp.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioEngine.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioGraph.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioRecorder.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioSessionManager.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/Bouncer.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/MIDIInput.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/ExportDocuments.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/LeadSheetPDF.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/Loudness.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/MIDIFileWriter.swift (in target 'Songwriter' from project 'Songwriter')
+
 SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/AppState.swift (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
@@ -923,87 +915,106 @@ SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.s
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
     
 
-SwiftDriverJobDiscovery normal arm64 Compiling SunoPack.swift, Chord.swift, DemoSong.swift, Key.swift, Song.swift, SongOps.swift, ProjectStore.swift, UndoStack.swift, BandGenerator.swift, ChartLayout.swift, BluetoothMIDI.swift, BounceSheet.swift, ChartScreen.swift, ChordPickerSheet.swift, Components.swift (in target 'Songwriter' from project 'Songwriter')
-
-SwiftCompile normal arm64 Compiling\ AppState.swift,\ ErrorCenter.swift,\ ProjectSession.swift,\ ResourceLocator.swift,\ Settings.swift,\ SongwriterApp.swift,\ AudioEngine.swift,\ AudioGraph.swift,\ AudioRecorder.swift,\ AudioSessionManager.swift,\ Bouncer.swift,\ MIDIInput.swift,\ ExportDocuments.swift,\ LeadSheetPDF.swift,\ Loudness.swift,\ MIDIFileWriter.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/AppState.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ErrorCenter.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ProjectSession.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ResourceLocator.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/Settings.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/SongwriterApp.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioEngine.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioGraph.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioRecorder.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioSessionManager.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/Bouncer.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/MIDIInput.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/ExportDocuments.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/LeadSheetPDF.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/Loudness.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/MIDIFileWriter.swift (in target 'Songwriter' from project 'Songwriter')
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/AppState.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ErrorCenter.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ProjectSession.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/ResourceLocator.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/Settings.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/App/SongwriterApp.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioEngine.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioGraph.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioRecorder.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/AudioSessionManager.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/Bouncer.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Audio/MIDIInput.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/ExportDocuments.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/LeadSheetPDF.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/Loudness.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-SwiftCompile normal arm64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/Export/MIDIFileWriter.swift (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    
-
-LinkAssetCatalog /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/AppPlaygroundDefaultAssetCatalog.xcassets (in target 'Songwriter' from project 'Songwriter')
+Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.swiftmodule /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftmodule (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-linkAssetCatalog --thinned /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app --plist-output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_generated_info.plist
-note: Emplaced /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Assets.car (in target 'Songwriter' from project 'Songwriter')
-note: Emplaced /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/__PlaceholderAppIcon60x60@2x.png (in target 'Songwriter' from project 'Songwriter')
-note: Emplaced /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/__PlaceholderAppIcon76x76@2x~ipad.png (in target 'Songwriter' from project 'Songwriter')
-
-SwiftDriverJobDiscovery normal x86_64 Compiling EditorView.swift, HeaderView.swift, LaneView.swift, MainView.swift, RegionView.swift, RulerView.swift, Scroll2D.swift, SettingsSheet.swift, Sheets.swift, SongsView.swift, Theme.swift, ToolsBar.swift, TrackHeaderView.swift, TracksScreen.swift, WaveformStore.swift (in target 'Songwriter' from project 'Songwriter')
-
-ProcessInfoPlistFile /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Info.plist /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/empty-Songwriter.plist (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-infoPlistUtility /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/empty-Songwriter.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_generated_info.plist -o /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Info.plist
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftmodule /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.swiftmodule
 
 SwiftDriverJobDiscovery normal x86_64 Compiling AppState.swift, ErrorCenter.swift, ProjectSession.swift, ResourceLocator.swift, Settings.swift, SongwriterApp.swift, AudioEngine.swift, AudioGraph.swift, AudioRecorder.swift, AudioSessionManager.swift, Bouncer.swift, MIDIInput.swift, ExportDocuments.swift, LeadSheetPDF.swift, Loudness.swift, MIDIFileWriter.swift (in target 'Songwriter' from project 'Songwriter')
+
+Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftdoc (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftdoc /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc
+
+Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.abi.json /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.abi.json (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.abi.json /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/x86_64-apple-ios-simulator.abi.json
+
+Copy /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftsourceinfo (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.swiftsourceinfo /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo
+
+SwiftDriver\ Compilation Songwriter normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    builtin-Swift-Compilation -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Songwriter -Onone -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name songwriter_swiftpm -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_const_extract_protocols.json -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
+
+SwiftCompile normal x86_64 Compiling\ EditorView.swift,\ HeaderView.swift,\ LaneView.swift,\ MainView.swift,\ RegionView.swift,\ RulerView.swift,\ Scroll2D.swift,\ SettingsSheet.swift,\ Sheets.swift,\ SongsView.swift,\ Theme.swift,\ ToolsBar.swift,\ TrackHeaderView.swift,\ TracksScreen.swift,\ WaveformStore.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/EditorView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/HeaderView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/LaneView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/MainView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/RegionView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/RulerView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Scroll2D.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/SettingsSheet.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Sheets.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/SongsView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Theme.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ToolsBar.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/TrackHeaderView.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/TracksScreen.swift /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/WaveformStore.swift (in target 'Songwriter' from project 'Songwriter')
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/EditorView.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/HeaderView.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/LaneView.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/MainView.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/RegionView.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/RulerView.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Scroll2D.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/SettingsSheet.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Sheets.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/SongsView.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/Theme.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/ToolsBar.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/TrackHeaderView.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/TracksScreen.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftCompile normal x86_64 /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/UI/WaveformStore.swift (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
+    
+
+SwiftDriverJobDiscovery normal x86_64 Compiling SunoPack.swift, Chord.swift, DemoSong.swift, Key.swift, Song.swift, SongOps.swift, ProjectStore.swift, UndoStack.swift, BandGenerator.swift, ChartLayout.swift, BluetoothMIDI.swift, BounceSheet.swift, ChartScreen.swift, ChordPickerSheet.swift, Components.swift (in target 'Songwriter' from project 'Songwriter')
+
+Ld /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter.debug.dylib normal arm64 (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -filelist /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.LinkFileList -install_name @rpath/Songwriter.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/../lib -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -o /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-ExecutorLinkFileList-normal-arm64.txt (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    construct-stub-executor-link-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter.debug.dylib /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'Songwriter' from project 'Songwriter')
+
+Ld /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter normal arm64 (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/../lib -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-ExecutorLinkFileList-normal-arm64.txt /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter.debug.dylib -o /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter
+
+SwiftDriverJobDiscovery normal x86_64 Compiling EditorView.swift, HeaderView.swift, LaneView.swift, MainView.swift, RegionView.swift, RulerView.swift, Scroll2D.swift, SettingsSheet.swift, Sheets.swift, SongsView.swift, Theme.swift, ToolsBar.swift, TrackHeaderView.swift, TracksScreen.swift, WaveformStore.swift (in target 'Songwriter' from project 'Songwriter')
 
 SwiftDriver\ Compilation Songwriter normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
@@ -1018,53 +1029,45 @@ ConstructStubExecutorLinkFileList /Users/runner/Library/Developer/Xcode/DerivedD
     construct-stub-executor-link-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/Songwriter.debug.dylib /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-ExecutorLinkFileList-normal-x86_64.txt
 note: Using stub executor library with Swift entry point. (in target 'Songwriter' from project 'Songwriter')
 
-Ld /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/Songwriter normal x86_64 (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios17.0-simulator -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/../lib -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-DebugDylibPath-normal-x86_64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-DebugDylibInstallName-normal-x86_64.txt -Xlinker -filelist -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-ExecutorLinkFileList-normal-x86_64.txt /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/Songwriter.debug.dylib -o /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/Songwriter
-
-SwiftDriverJobDiscovery normal arm64 Compiling AppState.swift, ErrorCenter.swift, ProjectSession.swift, ResourceLocator.swift, Settings.swift, SongwriterApp.swift, AudioEngine.swift, AudioGraph.swift, AudioRecorder.swift, AudioSessionManager.swift, Bouncer.swift, MIDIInput.swift, ExportDocuments.swift, LeadSheetPDF.swift, Loudness.swift, MIDIFileWriter.swift (in target 'Songwriter' from project 'Songwriter')
-
-SwiftDriver\ Compilation Songwriter normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode
-    builtin-Swift-Compilation -- /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Songwriter -Onone -enforce-exclusivity\=checked @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.SwiftFileList -DSWIFT_PACKAGE -DDEBUG -DXcode -plugin-path /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/iphonesimulator26.2-23C57-dc75598d0054f22ec865fa860f139d72e244bd9a5feaf902f95f61bf06266e52.sdkstatcache -output-file-map /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -sdk-module-cache-path /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -package-name songwriter_swiftpm -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_const_extract_protocols.json -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/arm64 -Xcc -I/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources -Xcc -DSWIFT_PACKAGE -Xcc -DDEBUG\=1 -working-directory /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm/.swiftpm/xcode -experimental-emit-module-separately -disable-cmo
-
-Ld /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter.debug.dylib normal arm64 (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -filelist /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.LinkFileList -install_name @rpath/Songwriter.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/../lib -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.swiftmodule @/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -o /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter.debug.dylib
-
 CreateUniversalBinary /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Songwriter.debug.dylib normal arm64\ x86_64 (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
     /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter.debug.dylib /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/Songwriter.debug.dylib -output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Songwriter.debug.dylib
 
-ConstructStubExecutorLinkFileList /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-ExecutorLinkFileList-normal-arm64.txt (in target 'Songwriter' from project 'Songwriter')
+Ld /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/Songwriter normal x86_64 (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    construct-stub-executor-link-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter.debug.dylib /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-ExecutorLinkFileList-normal-arm64.txt
-note: Using stub executor library with Swift entry point. (in target 'Songwriter' from project 'Songwriter')
-
-Ld /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter normal arm64 (in target 'Songwriter' from project 'Songwriter')
-    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/../lib -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-ExecutorLinkFileList-normal-arm64.txt /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter.debug.dylib -o /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios17.0-simulator -isysroot /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -O0 -L/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk/Developer/Library/Frameworks -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/../lib -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-DebugDylibPath-normal-x86_64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-DebugDylibInstallName-normal-x86_64.txt -Xlinker -filelist -Xlinker /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter-ExecutorLinkFileList-normal-x86_64.txt /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/Songwriter.debug.dylib -o /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/Songwriter
 
 CreateUniversalBinary /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Songwriter normal arm64\ x86_64 (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
     /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Binary/Songwriter /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Binary/Songwriter -output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Songwriter
 
+LinkAssetCatalog /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/DerivedSources/AppPlaygroundDefaultAssetCatalog.xcassets (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    builtin-linkAssetCatalog --thinned /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app --plist-output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Assets.car (in target 'Songwriter' from project 'Songwriter')
+note: Emplaced /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/__PlaceholderAppIcon60x60@2x.png (in target 'Songwriter' from project 'Songwriter')
+note: Emplaced /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/__PlaceholderAppIcon76x76@2x~ipad.png (in target 'Songwriter' from project 'Songwriter')
+
+ProcessInfoPlistFile /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Info.plist /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/empty-Songwriter.plist (in target 'Songwriter' from project 'Songwriter')
+    cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
+    builtin-infoPlistUtility /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/empty-Songwriter.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/assetcatalog_generated_info.plist -o /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Info.plist
+
 ExtractAppIntentsMetadata (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.GOXMXC/Metal.xctoolchain --module-name Songwriter --sdk-root /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk --xcode-version 17C529 --platform-family iOS --deployment-target 17.0 --bundle-identifier com.ajthereal.songwriter --output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app --target-triple arm64-apple-ios17.0-simulator --target-triple x86_64-apple-ios17.0-simulator --binary-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Songwriter --dependency-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_dependency_info.dat --dependency-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter_dependency_info.dat --stringsdata-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --stringsdata-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.SwiftFileList --source-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.SwiftFileList --metadata-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter.DependencyMetadataFileList --static-metadata-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.SwiftConstValuesFileList --swift-const-vals-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
-2026-11-23 05:12:06.867 appintentsmetadataprocessor[3275:12922] Starting appintentsmetadataprocessor export
-2026-11-23 05:12:06.873 appintentsmetadataprocessor[3275:12922] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+    /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.3Yzn4f/Metal.xctoolchain --module-name Songwriter --sdk-root /Applications/Xcode_26.3.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk --xcode-version 17C529 --platform-family iOS --deployment-target 17.0 --bundle-identifier com.ajthereal.songwriter --output /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app --target-triple arm64-apple-ios17.0-simulator --target-triple x86_64-apple-ios17.0-simulator --binary-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Songwriter --dependency-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter_dependency_info.dat --dependency-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter_dependency_info.dat --stringsdata-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --stringsdata-file /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.SwiftFileList --source-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.SwiftFileList --metadata-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter.DependencyMetadataFileList --static-metadata-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/arm64/Songwriter.SwiftConstValuesFileList --swift-const-vals-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Objects-normal/x86_64/Songwriter.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-11-23 05:16:25.250 appintentsmetadataprocessor[2866:11928] Starting appintentsmetadataprocessor export
+2026-11-23 05:16:25.264 appintentsmetadataprocessor[2866:11928] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
 
 CopySwiftLibs /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
-    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Songwriter.debug.dylib --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Frameworks --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/PlugIns --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/SystemExtensions --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.GOXMXC/Metal.xctoolchain --toolchain /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Songwriter.debug.dylib --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Frameworks --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/PlugIns --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/SystemExtensions --scan-folder /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.3.7003.10.3Yzn4f/Metal.xctoolchain --toolchain /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
 Ignoring --strip-bitcode because --sign was not passed
 
 AppIntentsSSUTraining (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
     /Applications/Xcode_26.3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Info.plist --temp-dir-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/ssu --bundle-id com.ajthereal.songwriter --product-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app --extracted-metadata-path /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app/Metadata.appintents --metadata-file-list /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Intermediates.noindex/Songwriter.build/Debug-iphonesimulator/Songwriter.build/Songwriter.DependencyMetadataFileList --archive-ssu-assets
-2026-11-23 05:12:06.920 appintentsnltrainingprocessor[3277:12930] Parsing options for appintentsnltrainingprocessor
-2026-11-23 05:12:06.923 appintentsnltrainingprocessor[3277:12930] No AppShortcuts found - Skipping.
+2026-11-23 05:16:25.314 appintentsnltrainingprocessor[2886:11986] Parsing options for appintentsnltrainingprocessor
+2026-11-23 05:16:25.316 appintentsnltrainingprocessor[2886:11986] No AppShortcuts found - Skipping.
 
 RegisterExecutionPolicyException /Users/runner/Library/Developer/Xcode/DerivedData/Songwriter-bnnbvllenykichbigiejziuibdtf/Build/Products/Debug-iphonesimulator/Songwriter.app (in target 'Songwriter' from project 'Songwriter')
     cd /Users/runner/work/songwriter/songwriter/Songwriter.swiftpm
