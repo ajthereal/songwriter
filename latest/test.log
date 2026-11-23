@@ -28,22 +28,22 @@ Building for debugging...
 [15/19] Compiling Core SongOps.swift
 [16/19] Compiling Core SunoPack.swift
 [17/19] Compiling Core UndoStack.swift
-[18/22] Compiling CoreTests ModelTests.swift
+[18/22] Compiling CoreTests MIDIAndLoudnessTests.swift
 [19/22] Emitting module CoreTests
-[20/22] Compiling CoreTests MIDIAndLoudnessTests.swift
+[20/22] Compiling CoreTests ModelTests.swift
 [21/23] Compiling CoreTests TheoryTests.swift
-[22/25] Emitting module CoreTestsPackageTests
-[23/25] Compiling CoreTestsPackageTests runner.swift
+[22/25] Compiling CoreTestsPackageTests runner.swift
+[23/25] Emitting module CoreTestsPackageTests
 [23/25] Write Objects.LinkFileList
 [24/25] Linking CoreTestsPackageTests
-Build complete! (26.79s)
-Test Suite 'All tests' started at 2026-11-23 04:36:46.154.
-Test Suite 'CoreTestsPackageTests.xctest' started at 2026-11-23 04:36:46.157.
-Test Suite 'BandGeneratorTests' started at 2026-11-23 04:36:46.157.
+Build complete! (19.14s)
+Test Suite 'All tests' started at 2026-11-23 04:39:43.069.
+Test Suite 'CoreTestsPackageTests.xctest' started at 2026-11-23 04:39:43.071.
+Test Suite 'BandGeneratorTests' started at 2026-11-23 04:39:43.071.
 Test Case '-[CoreTests.BandGeneratorTests testBassRootsFollowChords]' started.
 Test Case '-[CoreTests.BandGeneratorTests testBassRootsFollowChords]' passed (0.003 seconds).
 Test Case '-[CoreTests.BandGeneratorTests testChartLayout]' started.
-Test Case '-[CoreTests.BandGeneratorTests testChartLayout]' passed (0.000 seconds).
+Test Case '-[CoreTests.BandGeneratorTests testChartLayout]' passed (0.001 seconds).
 Test Case '-[CoreTests.BandGeneratorTests testDeterministic]' started.
 Test Case '-[CoreTests.BandGeneratorTests testDeterministic]' passed (0.006 seconds).
 Test Case '-[CoreTests.BandGeneratorTests testDrums]' started.
@@ -51,43 +51,43 @@ Test Case '-[CoreTests.BandGeneratorTests testDrums]' passed (0.001 seconds).
 Test Case '-[CoreTests.BandGeneratorTests testMakeEditable]' started.
 Test Case '-[CoreTests.BandGeneratorTests testMakeEditable]' passed (0.002 seconds).
 Test Case '-[CoreTests.BandGeneratorTests testRangeRestriction]' started.
-Test Case '-[CoreTests.BandGeneratorTests testRangeRestriction]' passed (0.000 seconds).
+Test Case '-[CoreTests.BandGeneratorTests testRangeRestriction]' passed (0.001 seconds).
 Test Case '-[CoreTests.BandGeneratorTests testTimingWithinBars]' started.
-Test Case '-[CoreTests.BandGeneratorTests testTimingWithinBars]' passed (0.013 seconds).
+Test Case '-[CoreTests.BandGeneratorTests testTimingWithinBars]' passed (0.007 seconds).
 Test Case '-[CoreTests.BandGeneratorTests testWaltz]' started.
 Test Case '-[CoreTests.BandGeneratorTests testWaltz]' passed (0.001 seconds).
-Test Suite 'BandGeneratorTests' passed at 2026-11-23 04:36:46.186.
-	 Executed 8 tests, with 0 failures (0 unexpected) in 0.027 (0.029) seconds
-Test Suite 'ChordTests' started at 2026-11-23 04:36:46.186.
+Test Suite 'BandGeneratorTests' passed at 2026-11-23 04:39:43.092.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.020 (0.022) seconds
+Test Suite 'ChordTests' started at 2026-11-23 04:39:43.092.
 Test Case '-[CoreTests.ChordTests testParseBasic]' started.
 Test Case '-[CoreTests.ChordTests testParseBasic]' passed (0.000 seconds).
 Test Case '-[CoreTests.ChordTests testParseRejectsGarbage]' started.
-Test Case '-[CoreTests.ChordTests testParseRejectsGarbage]' passed (0.001 seconds).
+Test Case '-[CoreTests.ChordTests testParseRejectsGarbage]' passed (0.000 seconds).
 Test Case '-[CoreTests.ChordTests testParseSlashAndRoundTrip]' started.
-Test Case '-[CoreTests.ChordTests testParseSlashAndRoundTrip]' passed (0.001 seconds).
+Test Case '-[CoreTests.ChordTests testParseSlashAndRoundTrip]' passed (0.000 seconds).
 Test Case '-[CoreTests.ChordTests testPitchClassesAndDisplay]' started.
 Test Case '-[CoreTests.ChordTests testPitchClassesAndDisplay]' passed (0.000 seconds).
 Test Case '-[CoreTests.ChordTests testSpelling]' started.
 Test Case '-[CoreTests.ChordTests testSpelling]' passed (0.000 seconds).
-Test Suite 'ChordTests' passed at 2026-11-23 04:36:46.189.
-	 Executed 5 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
-Test Suite 'ClearRangeTests' started at 2026-11-23 04:36:46.189.
+Test Suite 'ChordTests' passed at 2026-11-23 04:39:43.094.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ClearRangeTests' started at 2026-11-23 04:39:43.094.
 Test Case '-[CoreTests.ClearRangeTests testClearRangeSplitsAndRemoves]' started.
 Test Case '-[CoreTests.ClearRangeTests testClearRangeSplitsAndRemoves]' passed (0.000 seconds).
-Test Suite 'ClearRangeTests' passed at 2026-11-23 04:36:46.190.
-	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
-Test Suite 'CodecTests' started at 2026-11-23 04:36:46.190.
+Test Suite 'ClearRangeTests' passed at 2026-11-23 04:39:43.094.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'CodecTests' started at 2026-11-23 04:39:43.094.
 Test Case '-[CoreTests.CodecTests testDemoSong]' started.
-Test Case '-[CoreTests.CodecTests testDemoSong]' passed (0.001 seconds).
+Test Case '-[CoreTests.CodecTests testDemoSong]' passed (0.000 seconds).
 Test Case '-[CoreTests.CodecTests testFutureVersionRejected]' started.
-Test Case '-[CoreTests.CodecTests testFutureVersionRejected]' passed (0.006 seconds).
+Test Case '-[CoreTests.CodecTests testFutureVersionRejected]' passed (0.004 seconds).
 Test Case '-[CoreTests.CodecTests testGarbageRejected]' started.
-Test Case '-[CoreTests.CodecTests testGarbageRejected]' passed (0.001 seconds).
+Test Case '-[CoreTests.CodecTests testGarbageRejected]' passed (0.000 seconds).
 Test Case '-[CoreTests.CodecTests testRoundTrip]' started.
 Test Case '-[CoreTests.CodecTests testRoundTrip]' passed (0.001 seconds).
-Test Suite 'CodecTests' passed at 2026-11-23 04:36:46.200.
-	 Executed 4 tests, with 0 failures (0 unexpected) in 0.009 (0.010) seconds
-Test Suite 'KeyTests' started at 2026-11-23 04:36:46.200.
+Test Suite 'CodecTests' passed at 2026-11-23 04:39:43.100.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.005 (0.006) seconds
+Test Suite 'KeyTests' started at 2026-11-23 04:39:43.100.
 Test Case '-[CoreTests.KeyTests testAllKeys]' started.
 Test Case '-[CoreTests.KeyTests testAllKeys]' passed (0.000 seconds).
 Test Case '-[CoreTests.KeyTests testBMinorDiatonic]' started.
@@ -100,34 +100,34 @@ Test Case '-[CoreTests.KeyTests testFlatKeySpelling]' started.
 Test Case '-[CoreTests.KeyTests testFlatKeySpelling]' passed (0.000 seconds).
 Test Case '-[CoreTests.KeyTests testTimeSignature]' started.
 Test Case '-[CoreTests.KeyTests testTimeSignature]' passed (0.000 seconds).
-Test Suite 'KeyTests' passed at 2026-11-23 04:36:46.201.
+Test Suite 'KeyTests' passed at 2026-11-23 04:39:43.101.
 	 Executed 6 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
-Test Suite 'LoudnessTests' started at 2026-11-23 04:36:46.202.
+Test Suite 'LoudnessTests' started at 2026-11-23 04:39:43.101.
 Test Case '-[CoreTests.LoudnessTests testAbsoluteGateIgnoresSilence]' started.
-Test Case '-[CoreTests.LoudnessTests testAbsoluteGateIgnoresSilence]' passed (0.402 seconds).
+Test Case '-[CoreTests.LoudnessTests testAbsoluteGateIgnoresSilence]' passed (0.260 seconds).
 Test Case '-[CoreTests.LoudnessTests testFullScaleMonoSine]' started.
-Test Case '-[CoreTests.LoudnessTests testFullScaleMonoSine]' passed (0.079 seconds).
+Test Case '-[CoreTests.LoudnessTests testFullScaleMonoSine]' passed (0.066 seconds).
 Test Case '-[CoreTests.LoudnessTests testLevelScalesInDB]' started.
-Test Case '-[CoreTests.LoudnessTests testLevelScalesInDB]' passed (0.202 seconds).
+Test Case '-[CoreTests.LoudnessTests testLevelScalesInDB]' passed (0.192 seconds).
 Test Case '-[CoreTests.LoudnessTests testLimiterHonoursCeiling]' started.
-Test Case '-[CoreTests.LoudnessTests testLimiterHonoursCeiling]' passed (0.395 seconds).
+Test Case '-[CoreTests.LoudnessTests testLimiterHonoursCeiling]' passed (0.246 seconds).
 Test Case '-[CoreTests.LoudnessTests testLimiterLeavesQuietSignalAlone]' started.
-Test Case '-[CoreTests.LoudnessTests testLimiterLeavesQuietSignalAlone]' passed (0.076 seconds).
+Test Case '-[CoreTests.LoudnessTests testLimiterLeavesQuietSignalAlone]' passed (0.067 seconds).
 Test Case '-[CoreTests.LoudnessTests testNormalisationTowardTarget]' started.
-Test Case '-[CoreTests.LoudnessTests testNormalisationTowardTarget]' passed (0.204 seconds).
+Test Case '-[CoreTests.LoudnessTests testNormalisationTowardTarget]' passed (0.176 seconds).
 Test Case '-[CoreTests.LoudnessTests testOtherSampleRate]' started.
-Test Case '-[CoreTests.LoudnessTests testOtherSampleRate]' passed (0.112 seconds).
+Test Case '-[CoreTests.LoudnessTests testOtherSampleRate]' passed (0.096 seconds).
 Test Case '-[CoreTests.LoudnessTests testRelativeGateIgnoresQuietPassage]' started.
-Test Case '-[CoreTests.LoudnessTests testRelativeGateIgnoresQuietPassage]' passed (0.435 seconds).
+Test Case '-[CoreTests.LoudnessTests testRelativeGateIgnoresQuietPassage]' passed (0.447 seconds).
 Test Case '-[CoreTests.LoudnessTests testSilenceAndShortSignals]' started.
-Test Case '-[CoreTests.LoudnessTests testSilenceAndShortSignals]' passed (0.051 seconds).
+Test Case '-[CoreTests.LoudnessTests testSilenceAndShortSignals]' passed (0.045 seconds).
 Test Case '-[CoreTests.LoudnessTests testSineLoudness]' started.
-Test Case '-[CoreTests.LoudnessTests testSineLoudness]' passed (0.129 seconds).
+Test Case '-[CoreTests.LoudnessTests testSineLoudness]' passed (0.133 seconds).
 Test Case '-[CoreTests.LoudnessTests testTruePeakEstimateExceedsSamplePeakForIntersamplePeaks]' started.
 Test Case '-[CoreTests.LoudnessTests testTruePeakEstimateExceedsSamplePeakForIntersamplePeaks]' passed (0.000 seconds).
-Test Suite 'LoudnessTests' passed at 2026-11-23 04:36:48.288.
-	 Executed 11 tests, with 0 failures (0 unexpected) in 2.084 (2.086) seconds
-Test Suite 'MIDIFileWriterTests' started at 2026-11-23 04:36:48.288.
+Test Suite 'LoudnessTests' passed at 2026-11-23 04:39:44.829.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 1.726 (1.728) seconds
+Test Suite 'MIDIFileWriterTests' started at 2026-11-23 04:39:44.829.
 Test Case '-[CoreTests.MIDIFileWriterTests testDeltaTimesAndNoteOrder]' started.
 Test Case '-[CoreTests.MIDIFileWriterTests testDeltaTimesAndNoteOrder]' passed (0.001 seconds).
 Test Case '-[CoreTests.MIDIFileWriterTests testDrumsUseChannelTen]' started.
@@ -140,9 +140,9 @@ Test Case '-[CoreTests.MIDIFileWriterTests testTrackChunkLengthsAreConsistent]' 
 Test Case '-[CoreTests.MIDIFileWriterTests testTrackChunkLengthsAreConsistent]' passed (0.002 seconds).
 Test Case '-[CoreTests.MIDIFileWriterTests testVLQ]' started.
 Test Case '-[CoreTests.MIDIFileWriterTests testVLQ]' passed (0.000 seconds).
-Test Suite 'MIDIFileWriterTests' passed at 2026-11-23 04:36:48.300.
-	 Executed 6 tests, with 0 failures (0 unexpected) in 0.012 (0.013) seconds
-Test Suite 'SongModelTests' started at 2026-11-23 04:36:48.301.
+Test Suite 'MIDIFileWriterTests' passed at 2026-11-23 04:39:44.842.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.011 (0.012) seconds
+Test Suite 'SongModelTests' started at 2026-11-23 04:39:44.842.
 Test Case '-[CoreTests.SongModelTests testAddAndDeleteSection]' started.
 Test Case '-[CoreTests.SongModelTests testAddAndDeleteSection]' passed (0.000 seconds).
 Test Case '-[CoreTests.SongModelTests testBeatSecondConversion]' started.
@@ -167,35 +167,35 @@ Test Case '-[CoreTests.SongModelTests testSplitMidiRegion]' started.
 Test Case '-[CoreTests.SongModelTests testSplitMidiRegion]' passed (0.000 seconds).
 Test Case '-[CoreTests.SongModelTests testTimeSignatureChangeKeepsBars]' started.
 Test Case '-[CoreTests.SongModelTests testTimeSignatureChangeKeepsBars]' passed (0.000 seconds).
-Test Suite 'SongModelTests' passed at 2026-11-23 04:36:48.304.
+Test Suite 'SongModelTests' passed at 2026-11-23 04:39:44.845.
 	 Executed 12 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
-Test Suite 'SunoPackTests' started at 2026-11-23 04:36:48.304.
+Test Suite 'SunoPackTests' started at 2026-11-23 04:39:44.845.
 Test Case '-[CoreTests.SunoPackTests testRepeatedSectionsAreNumbered]' started.
 Test Case '-[CoreTests.SunoPackTests testRepeatedSectionsAreNumbered]' passed (0.000 seconds).
 Test Case '-[CoreTests.SunoPackTests testTags]' started.
 Test Case '-[CoreTests.SunoPackTests testTags]' passed (0.000 seconds).
-Test Suite 'SunoPackTests' passed at 2026-11-23 04:36:48.305.
+Test Suite 'SunoPackTests' passed at 2026-11-23 04:39:44.846.
 	 Executed 2 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
-Test Suite 'TrimTests' started at 2026-11-23 04:36:48.305.
+Test Suite 'TrimTests' started at 2026-11-23 04:39:44.846.
 Test Case '-[CoreTests.TrimTests testTrimEnd]' started.
 Test Case '-[CoreTests.TrimTests testTrimEnd]' passed (0.000 seconds).
 Test Case '-[CoreTests.TrimTests testTrimStartAudioAdjustsOffset]' started.
 Test Case '-[CoreTests.TrimTests testTrimStartAudioAdjustsOffset]' passed (0.000 seconds).
 Test Case '-[CoreTests.TrimTests testTrimStartMidi]' started.
 Test Case '-[CoreTests.TrimTests testTrimStartMidi]' passed (0.000 seconds).
-Test Suite 'TrimTests' passed at 2026-11-23 04:36:48.306.
+Test Suite 'TrimTests' passed at 2026-11-23 04:39:44.846.
 	 Executed 3 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
-Test Suite 'UndoStackTests' started at 2026-11-23 04:36:48.306.
+Test Suite 'UndoStackTests' started at 2026-11-23 04:39:44.846.
 Test Case '-[CoreTests.UndoStackTests testUndoDepthOfFifty]' started.
 Test Case '-[CoreTests.UndoStackTests testUndoDepthOfFifty]' passed (0.000 seconds).
 Test Case '-[CoreTests.UndoStackTests testUndoRedo]' started.
 Test Case '-[CoreTests.UndoStackTests testUndoRedo]' passed (0.000 seconds).
-Test Suite 'UndoStackTests' passed at 2026-11-23 04:36:48.306.
-	 Executed 2 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
-Test Suite 'CoreTestsPackageTests.xctest' passed at 2026-11-23 04:36:48.306.
-	 Executed 60 tests, with 0 failures (0 unexpected) in 2.138 (2.149) seconds
-Test Suite 'All tests' passed at 2026-11-23 04:36:48.306.
-	 Executed 60 tests, with 0 failures (0 unexpected) in 2.138 (2.152) seconds
+Test Suite 'UndoStackTests' passed at 2026-11-23 04:39:44.847.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'CoreTestsPackageTests.xctest' passed at 2026-11-23 04:39:44.847.
+	 Executed 60 tests, with 0 failures (0 unexpected) in 1.768 (1.776) seconds
+Test Suite 'All tests' passed at 2026-11-23 04:39:44.847.
+	 Executed 60 tests, with 0 failures (0 unexpected) in 1.768 (1.778) seconds
 ◇ Test run started.
 ↳ Testing Library Version: 1501
 ↳ Target Platform: arm64e-apple-macos14.0
