@@ -52,7 +52,13 @@ final class ProjectSession: ObservableObject, Identifiable {
     @Published var selectedTrackID: UUID? {
         didSet { updateLiveTarget() }
     }
-    @Published var selectedRegionID: UUID?
+    @Published var selectedRegionID: UUID? {
+        didSet { if selectedRegionID != nil && selectedFollowTrackID != nil { selectedFollowTrackID = nil } }
+    }
+    /// A generated (follow chords) part is selected; it has no region of its own.
+    @Published var selectedFollowTrackID: UUID? {
+        didSet { if selectedFollowTrackID != nil && selectedRegionID != nil { selectedRegionID = nil } }
+    }
     @Published var snap: SnapMode
     @Published var pxPerBeat: CGFloat = 16
     @Published var followOn = true
@@ -170,6 +176,32 @@ final class ProjectSession: ObservableObject, Identifiable {
         return song.tracks.first { $0.id == id }
     }
 
+    func selectRegion(trackID: UUID, regionID: UUID) {
+        selectedTrackID = trackID
+        selectedRegionID = regionID
+        editorOpen = true
+    }
+
+    func selectFollowPart(trackID: UUID) {
+        selectedTrackID = trackID
+        selectedFollowTrackID = trackID
+        editorOpen = true
+    }
+
+    func clearRegionSelection(trackID: UUID? = nil) {
+        if let t = trackID { selectedTrackID = t }
+        selectedRegionID = nil
+        selectedFollowTrackID = nil
+    }
+
+    /// The track whose generated part is selected, if it still follows the chords.
+    var selectedFollowTrack: Track? {
+        guard let id = selectedFollowTrackID,
+              let t = song.tracks.first(where: { $0.id == id }),
+              t.kind == .instrument, t.follow else { return nil }
+        return t
+    }
+
     var selectedRegion: (track: Track, region: Region)? {
         guard let rid = selectedRegionID else { return nil }
         for t in song.tracks {
@@ -250,6 +282,7 @@ final class ProjectSession: ObservableObject, Identifiable {
         if let t = selectedTrackID, !song.tracks.contains(where: { $0.id == t }) { selectedTrackID = song.tracks.first?.id }
         if let a = armedTrackID, !song.tracks.contains(where: { $0.id == a }) { armedTrackID = nil }
         if selectedRegion == nil { selectedRegionID = nil }
+        if selectedFollowTrack == nil { selectedFollowTrackID = nil }
     }
 
     func updateRegion(trackID: UUID, regionID: UUID, undo: Bool = true, _ action: (inout Region) -> Void) {

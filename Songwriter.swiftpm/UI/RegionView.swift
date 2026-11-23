@@ -28,11 +28,6 @@ struct RegionView: View {
         .clipShape(RoundedRectangle(cornerRadius: 5))
         .contentShape(Rectangle())
         .offset(x: CGFloat(region.startBeat) * ppb, y: 4)
-        .onTapGesture {
-            session.selectedTrackID = track.id
-            session.selectedRegionID = region.id
-            session.editorOpen = true
-        }
         .gesture(moveGesture)
     }
 
@@ -78,15 +73,14 @@ struct RegionView: View {
     // MARK: Gestures
 
     private var moveGesture: some Gesture {
-        LongPressGesture(minimumDuration: 0.3)
+        LongPressGesture(minimumDuration: 0.22, maximumDistance: 14)
             .sequenced(before: DragGesture(minimumDistance: 0))
             .onChanged { value in
                 if case .second(true, let drag?) = value {
                     if original == nil {
                         original = region
                         session.beginGesture()
-                        session.selectedTrackID = track.id
-                        session.selectedRegionID = region.id
+                        session.selectRegion(trackID: track.id, regionID: region.id)
                     }
                     guard let o = original else { return }
                     let delta = Double(drag.translation.width / session.pxPerBeat)

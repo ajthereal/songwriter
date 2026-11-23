@@ -7,7 +7,7 @@ struct EditorView: View {
         Group {
             if !session.editorOpen {
                 HStack {
-                    Text(session.selectedRegion == nil
+                    Text(!hasSelection
                          ? "Editor \u{2014} tap a region to edit its notes or takes"
                          : "Editor")
                         .font(Theme.serifItalic(14)).foregroundColor(Theme.ink2)
@@ -29,6 +29,8 @@ struct EditorView: View {
                         } else {
                             TakesView(session: session, trackID: sel.track.id, regionID: sel.region.id)
                         }
+                    } else if let ft = session.selectedFollowTrack {
+                        PianoRollView(session: session, trackID: ft.id, regionID: ft.id, readOnly: true)
                     } else {
                         placeholder
                     }
@@ -39,11 +41,18 @@ struct EditorView: View {
             }
         }
         .onChange(of: session.selectedRegionID) { _, new in
-            session.editorOpen = (new != nil)
+            if new != nil { session.editorOpen = true } else if session.selectedFollowTrackID == nil { session.editorOpen = false }
+        }
+        .onChange(of: session.selectedFollowTrackID) { _, new in
+            if new != nil { session.editorOpen = true } else if session.selectedRegionID == nil { session.editorOpen = false }
         }
         .onAppear {
-            if session.selectedRegionID == nil { session.editorOpen = false }
+            if !hasSelection { session.editorOpen = false }
         }
+    }
+
+    private var hasSelection: Bool {
+        session.selectedRegion != nil || session.selectedFollowTrack != nil
     }
 
     private var placeholder: some View {
@@ -74,6 +83,8 @@ struct PianoRollView: View {
     @ObservedObject var session: ProjectSession
     var trackID: UUID
     var regionID: UUID
+    /// True for a generated (follow chords) part: notes are shown dimmed and cannot be changed.
+    var readOnly: Bool = false
     @State var gridIndex = 1
     @State var selectedNote: UUID?
     @State var origin: Note?
@@ -93,7 +104,7 @@ struct PianoRollView: View {
     var rowCount: Int { PianoRollView.highPitch - PianoRollView.lowPitch + 1 }
 
     var body: some View {
-        if let region = session.song.region(trackID: trackID, regionID: regionID) {
+        if let region = currentRegion() {
             VStack(spacing: 0) {
                 toolbar(region)
                 roll(region)
@@ -101,10 +112,29 @@ struct PianoRollView: View {
             .onAppear { scrollToNotes(region) }
             .onChange(of: regionID) { _, _ in
                 selectedNote = nil
-                if let r = session.song.region(trackID: trackID, regionID: regionID) { scrollToNotes(r) }
+                if let r = currentRegion() { scrollToNotes(r) }
             }
         } else {
             Color.clear
+        }
+    }
+
+    /// The region being shown: the real one, or a read-only stand-in for a generated part.
+    private func currentRegion() -> Region? {
+        if !readOnly { return session.song.region(trackID: trackID, regionID: regionID) }
+        guard let t = session.song.tracks.first(where: { $0.id == trackID }), t.follow else { return nil }
+        let notes = BandGenerator.generate(song: session.song, instrument: t.instrument, style: t.style)
+            .map { Note(pitch: $0.pitch, start: $0.start, length: $0.length, velocity: $0.velocity) }
+        return Region(id: t.id, name: t.name, kind: .midi, startBeat: 0,
+                      lengthBeats: max(1, session.song.lengthBeats), notes: notes)
+    }
+
+    private func makeEditable() {
+        session.edit { $0.makeEditable(trackID: trackID) }
+        session.selectedFollowTrackID = nil
+        if let t = session.song.tracks.first(where: { $0.id == trackID }),
+           let first = t.regions.first(where: { $0.kind == .midi }) {
+            session.selectRegion(trackID: trackID, regionID: first.id)
         }
     }
 
@@ -123,14 +153,40 @@ struct PianoRollView: View {
 
     private func toolbar(_ region: Region) -> some View {
         HStack(spacing: 10) {
-            Text(region.name).font(Theme.serifMediumItalic(16)).foregroundColor(Theme.ink).lineLimit(1)
-            Text("Piano roll").font(Theme.serifItalic(13)).foregroundColor(Theme.ink2)
-            Spacer(minLength: 6)
-            Picker("Grid", selection: $gridIndex) {
-                ForEach(0..<PianoRollView.grids.count, id: \.self) { i in Text(PianoRollView.grids[i].0).tag(i) }
+            if readOnly {
+                Text("This part follows the chord track. Make it editable to change notes.")
+                    .font(Theme.serifItalic(14)).foregroundColor(Theme.ink)
+                    .lineLimit(2).minimumScaleFactor(0.85)
+                Spacer(minLength: 6)
+                TextActionButton(title: "Make editable", systemName: "pencil", prominent: true) { makeEditable() }
+            } else {
+                Text(region.name).font(Theme.serifMediumItalic(16)).foregroundColor(Theme.ink).lineLimit(1)
+                Text("Piano roll").font(Theme.serifItalic(13)).foregroundColor(Theme.ink2)
+                Spacer(minLength: 6)
+                Picker("Grid", selection: $gridIndex) {
+                    ForEach(0..<PianoRollView.grids.count, id: \.self) { i in Text(PianoRollView.grids[i].0).tag(i) }
+                }
+                .pickerStyle(.segmented)
+                .frame(width: 190)
+                quantizeMenu
             }
-            .pickerStyle(.segmented)
-            .frame(width: 190)
+            IconButton(systemName: "minus.magnifyingglass", label: "Zoom out") {
+                session.rollPxPerBeat = max(24, session.rollPxPerBeat / 1.25)
+            }
+            IconButton(systemName: "plus.magnifyingglass", label: "Zoom in") {
+                session.rollPxPerBeat = min(260, session.rollPxPerBeat * 1.25)
+            }
+            if !readOnly {
+                IconButton(systemName: "trash", label: "Delete note", enabled: selectedNote != nil) { deleteSelected() }
+            }
+            IconButton(systemName: "chevron.down", label: "Collapse editor") { session.editorOpen = false }
+        }
+        .padding(.horizontal, 12)
+        .frame(height: 44)
+    }
+
+    private var quantizeMenu: some View {
+        Group {
             Menu {
                 ForEach(0..<PianoRollView.grids.count, id: \.self) { i in
                     Button("Quantize to \(PianoRollView.grids[i].0)") { quantize(PianoRollView.grids[i].1) }
@@ -141,17 +197,7 @@ struct PianoRollView: View {
                     .overlay(RoundedRectangle(cornerRadius: 8).stroke(Theme.line, lineWidth: 1.2))
                     .frame(minHeight: 44)
             }
-            IconButton(systemName: "minus.magnifyingglass", label: "Zoom out") {
-                session.rollPxPerBeat = max(24, session.rollPxPerBeat / 1.25)
-            }
-            IconButton(systemName: "plus.magnifyingglass", label: "Zoom in") {
-                session.rollPxPerBeat = min(260, session.rollPxPerBeat * 1.25)
-            }
-            IconButton(systemName: "trash", label: "Delete note", enabled: selectedNote != nil) { deleteSelected() }
-            IconButton(systemName: "chevron.down", label: "Collapse editor") { session.editorOpen = false }
         }
-        .padding(.horizontal, 12)
-        .frame(height: 44)
     }
 
     // MARK: Roll
@@ -201,7 +247,7 @@ struct PianoRollView: View {
         let selected = selectedNote == note.id
         return ZStack(alignment: .trailing) {
             RoundedRectangle(cornerRadius: 3)
-                .fill(palette.caption.opacity(0.55 + 0.45 * Double(note.velocity) / 127.0))
+                .fill(palette.caption.opacity((0.55 + 0.45 * Double(note.velocity) / 127.0) * (readOnly ? 0.55 : 1)))
             RoundedRectangle(cornerRadius: 3)
                 .stroke(selected ? Theme.ink : palette.content, lineWidth: selected ? 2 : 1)
             Rectangle()
@@ -226,6 +272,7 @@ struct PianoRollView: View {
     private func moveGesture(note: Note, ppb: CGFloat) -> some Gesture {
         DragGesture(minimumDistance: 4)
             .onChanged { value in
+                if readOnly { return }
                 if origin == nil {
                     origin = note
                     selectedNote = note.id
@@ -254,6 +301,7 @@ struct PianoRollView: View {
     private func resizeGesture(note: Note, ppb: CGFloat) -> some Gesture {
         DragGesture(minimumDistance: 2)
             .onChanged { value in
+                if readOnly { return }
                 if origin == nil {
                     origin = note
                     selectedNote = note.id
@@ -279,6 +327,7 @@ struct PianoRollView: View {
     // MARK: Edits
 
     private func addNote(at location: CGPoint, region: Region, ppb: CGFloat) {
+        if readOnly { return }
         let pitch = PianoRollView.highPitch - Int(floor(location.y / PianoRollView.rowHeight))
         guard pitch >= PianoRollView.lowPitch, pitch <= PianoRollView.highPitch else { return }
         let g = grid
@@ -293,6 +342,7 @@ struct PianoRollView: View {
     }
 
     private func deleteNote(_ id: UUID) {
+        if readOnly { return }
         session.updateRegion(trackID: trackID, regionID: regionID) { r in
             r.notes.removeAll { $0.id == id }
         }
@@ -304,6 +354,7 @@ struct PianoRollView: View {
     }
 
     private func quantize(_ g: Double) {
+        if readOnly { return }
         session.updateRegion(trackID: trackID, regionID: regionID) { r in
             r.notes = Quantizer.quantize(r.notes, grid: g)
         }
@@ -372,6 +423,7 @@ struct PianoRollView: View {
         .gesture(
             DragGesture(minimumDistance: 0)
                 .onChanged { value in
+                    if readOnly { return }
                     if velocityTarget == nil {
                         let x = Double(value.startLocation.x / ppb)
                         let nearest = region.notes.min { abs($0.start - x) < abs($1.start - x) }

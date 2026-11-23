@@ -90,60 +90,110 @@ struct ChartLineView: View {
 
 struct LyricsScreen: View {
     @ObservedObject var session: ProjectSession
+    @FocusState var focusedSection: UUID?
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 22) {
-                ForEach(session.song.sections) { s in
-                    LyricsBlock(session: session, sectionID: s.id)
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 22) {
+                    ForEach(session.song.sections) { s in
+                        LyricsBlock(session: session, sectionID: s.id, focus: $focusedSection)
+                            .id(s.id)
+                    }
+                    if session.song.sections.isEmpty {
+                        Text("Add a section first (tap a section name in the ruler, or use Tempo, key and sections).")
+                            .font(Theme.serifItalic(17)).foregroundColor(Theme.ink2)
+                    }
+                    // Room so the last box can scroll above the keyboard.
+                    Color.clear.frame(height: 320)
                 }
-                if session.song.sections.isEmpty {
-                    Text("Add a section first (tap a section name in the ruler, or use Tempo, key and sections).")
-                        .font(Theme.serifItalic(17)).foregroundColor(Theme.ink2)
+                .padding(28)
+                .frame(maxWidth: 800, alignment: .leading)
+                .frame(maxWidth: .infinity)
+                .background(Color.clear.contentShape(Rectangle()).onTapGesture { focusedSection = nil })
+            }
+            .scrollDismissesKeyboard(.interactively)
+            .onChange(of: focusedSection) { _, id in
+                guard let id = id else { return }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                    withAnimation(.easeInOut(duration: 0.2)) { proxy.scrollTo(id, anchor: .top) }
                 }
             }
-            .padding(28)
-            .frame(maxWidth: 800, alignment: .leading)
-            .frame(maxWidth: .infinity)
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("Done") { focusedSection = nil }
+                }
+            }
         }
-        .scrollDismissesKeyboard(.interactively)
     }
 }
 
+/// One editable lyrics box. Text is kept in local state so typing is never interrupted by model updates;
+/// it is written to the song (one undo step per burst of typing) shortly after typing pauses, and when focus leaves.
 struct LyricsBlock: View {
     @ObservedObject var session: ProjectSession
     var sectionID: UUID
-    @FocusState var focused: Bool
+    var focus: FocusState<UUID?>.Binding
+    @State var text = ""
+    @State var loaded = false
+    @State var commitWork: DispatchWorkItem?
+
+    private var modelText: String? {
+        session.song.sections.first(where: { $0.id == sectionID })?.lyrics
+    }
 
     var body: some View {
-        if let index = session.song.sections.firstIndex(where: { $0.id == sectionID }) {
-            let s = session.song.sections[index]
+        if let s = session.song.sections.first(where: { $0.id == sectionID }) {
             VStack(alignment: .leading, spacing: 6) {
                 HStack(spacing: 8) {
                     SectionBadge(letter: s.letter, size: 24)
                     Text(s.name).font(Theme.serifItalic(19)).foregroundColor(Theme.ink)
                     Text("\(s.lengthBars) bars").font(Theme.ui(13)).foregroundColor(Theme.ink2)
                 }
-                TextEditor(text: Binding(
-                    get: { session.song.sections.first(where: { $0.id == sectionID })?.lyrics ?? "" },
-                    set: { newValue in
-                        session.mutate { song in
-                            if let i = song.sections.firstIndex(where: { $0.id == sectionID }) { song.sections[i].lyrics = newValue }
-                        }
+                TextEditor(text: $text)
+                    .focused(focus, equals: sectionID)
+                    .font(Theme.serif(18))
+                    .foregroundColor(Theme.ink)
+                    .scrollContentBackground(.hidden)
+                    .autocorrectionDisabled(false)
+                    .padding(10)
+                    .frame(minHeight: 120)
+                    .background(RoundedRectangle(cornerRadius: 8).fill(Theme.panel))
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(focus.wrappedValue == sectionID ? Theme.red : Theme.line, lineWidth: 1.2))
+                    .contentShape(Rectangle())
+                    .onTapGesture { focus.wrappedValue = sectionID }
+                    .onAppear {
+                        if !loaded { text = s.lyrics; loaded = true }
                     }
-                ))
-                .focused($focused)
-                .font(Theme.serif(18))
-                .foregroundColor(Theme.ink)
-                .scrollContentBackground(.hidden)
-                .padding(10)
-                .frame(minHeight: 110)
-                .background(RoundedRectangle(cornerRadius: 8).fill(Theme.panel))
-                .overlay(RoundedRectangle(cornerRadius: 8).stroke(focused ? Theme.red : Theme.line, lineWidth: 1.2))
-                .onChange(of: focused) { _, isFocused in
-                    if isFocused { session.beginGesture() } else { session.endGesture() }
-                }
+                    .onChange(of: text) { _, newValue in scheduleCommit(newValue) }
+                    .onChange(of: modelText) { _, newValue in
+                        // External change (undo, redo): adopt it unless the user is typing here.
+                        if focus.wrappedValue != sectionID, let v = newValue, v != text { text = v }
+                    }
+                    .onChange(of: focus.wrappedValue) { _, newFocus in
+                        if newFocus != sectionID { commitNow() }
+                    }
+                    .onDisappear { commitNow() }
             }
+        }
+    }
+
+    private func scheduleCommit(_ value: String) {
+        guard loaded, value != modelText else { return }
+        commitWork?.cancel()
+        let work = DispatchWorkItem { commitNow() }
+        commitWork = work
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7, execute: work)
+    }
+
+    private func commitNow() {
+        commitWork?.cancel()
+        commitWork = nil
+        guard loaded, let current = modelText, current != text else { return }
+        let value = text
+        session.edit { song in
+            if let i = song.sections.firstIndex(where: { $0.id == sectionID }) { song.sections[i].lyrics = value }
         }
     }
 }

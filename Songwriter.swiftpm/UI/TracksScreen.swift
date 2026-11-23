@@ -48,32 +48,22 @@ struct TracksScreen: View {
             topHeight: TimelineMetrics.rulerHeight,
             request: request,
             tracker: tracker,
+            onPinch: { scale, ended in
+                if ended { pinchBase = nil; return }
+                if pinchBase == nil { pinchBase = session.pxPerBar }
+                session.setZoom(pxPerBar: (pinchBase ?? session.pxPerBar) * scale)
+            },
             content: { lanes },
             left: { headers },
             top: { RulerView(session: session, width: contentWidth) },
             corner: { RulerCorner(session: session) }
         )
-        .simultaneousGesture(
-            MagnificationGesture()
-                .onChanged { value in
-                    if pinchBase == nil { pinchBase = session.pxPerBar }
-                    let base = pinchBase ?? session.pxPerBar
-                    tracker.ignoreUntil = Date().addingTimeInterval(0.6)
-                    session.setZoom(pxPerBar: base * value)
-                }
-                .onEnded { _ in pinchBase = nil }
-        )
         .onAppear {
-            let t = tracker
             let s = session
-            t.onChange = { old, new in
+            tracker.onUserScroll = {
                 guard s.isPlaying, s.followOn, !s.followPaused else { return }
-                guard Date() >= t.ignoreUntil, abs(new.x - old.x) > 1 else { return }
                 DispatchQueue.main.async { s.followPaused = true }
             }
-        }
-        .onChange(of: session.pxPerBeat) { _, _ in
-            tracker.ignoreUntil = Date().addingTimeInterval(0.6)
         }
         .onReceive(followTimer) { _ in followTick() }
         .onChange(of: session.stoppedBeat) { _, beat in
@@ -118,7 +108,6 @@ struct TracksScreen: View {
     /// so it sits about 15% from the left whenever it passes 85% of the width or leaves on the left.
     private func followTick() {
         guard session.isPlaying, session.followOn, !session.followPaused else { return }
-        guard Date() >= tracker.ignoreUntil else { return }
         let visible = tracker.size.width - leftWidth
         guard visible > 40 else { return }
         let x = CGFloat(max(0, session.displayBeat())) * session.pxPerBeat
@@ -132,7 +121,6 @@ struct TracksScreen: View {
 
     private func scroll(toPlayheadX x: CGFloat, visible: CGFloat) {
         let target = max(0, x - visible * 0.15)
-        tracker.ignoreUntil = Date().addingTimeInterval(0.5)
         request = ScrollRequest(token: (request?.token ?? 0) + 1, x: target, y: nil)
     }
 

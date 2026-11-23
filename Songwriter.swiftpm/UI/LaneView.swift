@@ -19,9 +19,25 @@ struct LaneView: View {
         }
         .frame(width: width, height: TimelineMetrics.trackHeight, alignment: .topLeading)
         .contentShape(Rectangle())
-        .onTapGesture {
-            session.selectedTrackID = track.id
-            session.selectedRegionID = nil
+        .gesture(
+            SpatialTapGesture().onEnded { value in handleTap(at: value.location.x) }
+        )
+    }
+}
+
+extension LaneView {
+    /// One tap handler for the whole lane: picks the topmost region under the pointer, then a generated
+    /// follow-chords part, otherwise deselects. Taps never depend on child views receiving them.
+    func handleTap(at x: CGFloat) {
+        let ppb = session.pxPerBeat
+        guard ppb > 0 else { return }
+        let beat = Double(x / ppb)
+        if let r = track.regions.last(where: { beat >= $0.startBeat && beat <= $0.endBeat }) {
+            session.selectRegion(trackID: track.id, regionID: r.id)
+        } else if track.kind == .instrument && track.follow && beat >= 0 && beat <= session.song.lengthBeats {
+            session.selectFollowPart(trackID: track.id)
+        } else {
+            session.clearRegionSelection(trackID: track.id)
         }
     }
 }
@@ -85,6 +101,10 @@ struct FollowRegionView: View {
             .background(palette.caption)
             .clipShape(UnevenRoundedRectangle(topLeadingRadius: 5, bottomLeadingRadius: 0, bottomTrailingRadius: 0, topTrailingRadius: 5))
         }
+        .overlay(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(Theme.ink, lineWidth: session.selectedFollowTrackID == track.id ? 2 : 0)
+        )
         .frame(width: w, height: TimelineMetrics.trackHeight - 8)
         .offset(x: 0, y: 4)
         .allowsHitTesting(false)

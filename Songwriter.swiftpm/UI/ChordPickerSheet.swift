@@ -41,6 +41,7 @@ struct ChordPickerSheet: View {
                                     }
                                     .frame(minWidth: 60, minHeight: 44)
                                     .overlay(RoundedRectangle(cornerRadius: 8).stroke(Theme.line, lineWidth: 1.2))
+                                    .contentShape(Rectangle())
                                 }
                                 .buttonStyle(.plain)
                             }
@@ -105,6 +106,7 @@ struct ChordPickerSheet: View {
                 .frame(maxWidth: .infinity, minHeight: 44)
                 .background(RoundedRectangle(cornerRadius: 8).fill(selected ? Theme.red : Color.clear))
                 .overlay(RoundedRectangle(cornerRadius: 8).stroke(selected ? Theme.red : Theme.line, lineWidth: 1.2))
+                .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
     }
