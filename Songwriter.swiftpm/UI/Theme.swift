@@ -32,6 +32,10 @@ enum Theme {
     static let ink = Color.dynamic(light: 0x17202E, dark: 0xE8ECF2)
     static let ink2 = Color.dynamic(light: 0x4F5B6D, dark: 0xA3AEBF)
     static let red = Color.dynamic(light: 0xC2362B, dark: 0xFF6A5C)
+    /// Text and icon colour on top of a Theme.red (or other accent) fill; passes 4.5:1 in both themes.
+    static let onAccent = Color.dynamic(light: 0xFFFFFF, dark: 0x131925)
+    static let muteOn = Color.dynamic(light: 0x8A5D12, dark: 0xE3B866)
+    static let soloOn = Color.dynamic(light: 0x2F5DB8, dark: 0x9DBDF0)
     static let armed = Color.dynamic(light: 0xE9EFF7, dark: 0x172235)
 
     static func palette(_ key: TrackColorKey) -> TrackPalette {
@@ -42,11 +46,11 @@ enum Theme {
                                 content: .dynamic(light: 0x2F5DB8, dark: 0x9DBDF0))
         case .audio2:
             return TrackPalette(body: .dynamic(light: 0xE4E9F3, dark: 0x1C283C),
-                                caption: .dynamic(light: 0x6A82B0, dark: 0x566F9C),
+                                caption: .dynamic(light: 0x546C9A, dark: 0x566F9C),
                                 content: .dynamic(light: 0x4F6894, dark: 0x8AA3CC))
         case .piano:
             return TrackPalette(body: .dynamic(light: 0xF4E8D2, dark: 0x33291A),
-                                caption: .dynamic(light: 0xA8741C, dark: 0xA8741C),
+                                caption: .dynamic(light: 0x95650F, dark: 0x95650F),
                                 content: .dynamic(light: 0x8A5D12, dark: 0xE3B866))
         case .ePiano:
             return TrackPalette(body: .dynamic(light: 0xECE4F5, dark: 0x2A2240),

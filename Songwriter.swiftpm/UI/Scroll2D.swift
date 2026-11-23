@@ -9,6 +9,10 @@ struct ScrollOffsetKey: PreferenceKey {
 final class ScrollTracker {
     var offset: CGPoint = .zero
     var size: CGSize = .zero
+    /// Offset changes before this time are treated as programmatic (not a user scroll).
+    var ignoreUntil = Date.distantPast
+    /// Called with the previous and new offset whenever the scroll offset changes.
+    var onChange: ((CGPoint, CGPoint) -> Void)?
 }
 
 struct ScrollRequest: Equatable {
@@ -34,7 +38,7 @@ struct Scroll2D<Content: View, Left: View, Top: View, Corner: View, Bottom: View
 
     @State var offset: CGPoint = .zero
     let space = "scroll2d"
-    let step: CGFloat = 100
+    let step: CGFloat = 25
 
     init(contentSize: CGSize, leftWidth: CGFloat, topHeight: CGFloat, bottomHeight: CGFloat = 0,
          request: ScrollRequest? = nil, tracker: ScrollTracker? = nil,
@@ -92,14 +96,16 @@ struct Scroll2D<Content: View, Left: View, Top: View, Corner: View, Bottom: View
             }
             .coordinateSpace(name: space)
             .onPreferenceChange(ScrollOffsetKey.self) { value in
+                let old = tracker?.offset ?? .zero
                 tracker?.offset = value
                 if value != offset { offset = value }
+                if value != old { tracker?.onChange?(old, value) }
             }
             .onChange(of: request) { _, newValue in
                 guard let r = newValue else { return }
                 if let x = r.x {
                     let k = max(0, Int(x / step))
-                    withAnimation(.easeOut(duration: 0.2)) { proxy.scrollTo("x\(k)", anchor: .leading) }
+                    withAnimation(.easeInOut(duration: 0.25)) { proxy.scrollTo("x\(k)", anchor: .leading) }
                 }
                 if let y = r.y {
                     let k = max(0, Int(y / step))
@@ -109,7 +115,7 @@ struct Scroll2D<Content: View, Left: View, Top: View, Corner: View, Bottom: View
         }
     }
 
-    /// Invisible anchors every 100 points so the view can be scrolled programmatically.
+    /// Invisible anchors every 25 points so the view can be scrolled programmatically.
     private var markers: some View {
         ZStack(alignment: .topLeading) {
             ForEach(0..<(Int(totalWidth / step) + 1), id: \.self) { i in

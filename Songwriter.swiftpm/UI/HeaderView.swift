@@ -8,23 +8,12 @@ struct HeaderView: View {
     @State var titleText = ""
 
     var body: some View {
-        GeometryReader { geo in
+        ViewThatFits(in: .horizontal) {
+            row(subtitle: true, compactSwitch: false)
+            row(subtitle: false, compactSwitch: false)
+            row(subtitle: false, compactSwitch: true)
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 14) {
-                    IconButton(systemName: "chevron.left", label: "Back to songs") {
-                        app.closeProject()
-                    }
-                    titleBlock
-                    Spacer(minLength: 8)
-                    transport
-                    PositionCounter(session: session)
-                    Spacer(minLength: 8)
-                    viewSwitch
-                    Spacer(minLength: 8)
-                    rightButtons
-                }
-                .padding(.horizontal, 12)
-                .frame(minWidth: geo.size.width, minHeight: 76)
+                row(subtitle: false, compactSwitch: true)
             }
         }
         .frame(height: 76)
@@ -43,7 +32,25 @@ struct HeaderView: View {
         }
     }
 
-    private var titleBlock: some View {
+    private func row(subtitle: Bool, compactSwitch: Bool) -> some View {
+        HStack(spacing: 12) {
+            IconButton(systemName: "chevron.left", label: "Back to songs") {
+                app.closeProject()
+            }
+            titleBlock(subtitle: subtitle)
+            Spacer(minLength: 6)
+            transport
+            PositionCounter(session: session)
+            Spacer(minLength: 6)
+            viewSwitch(compact: compactSwitch)
+            Spacer(minLength: 6)
+            rightButtons
+        }
+        .padding(.horizontal, 12)
+        .frame(minHeight: 76)
+    }
+
+    private func titleBlock(subtitle: Bool) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             Button(action: {
                 titleText = session.song.title
@@ -55,15 +62,18 @@ struct HeaderView: View {
                     .lineLimit(1)
             }
             .buttonStyle(.plain)
-            Button(action: { session.sheet = .tempo }) {
-                Text("Tempo \u{2669} = \(Int(session.song.tempo.rounded()))  \u{2022}  \(session.song.key.displayName)  \u{2022}  \(session.song.timeSignature.label)")
-                    .font(Theme.serifItalic(14))
-                    .foregroundColor(Theme.ink2)
-                    .lineLimit(1)
+            if subtitle {
+                Button(action: { session.sheet = .tempo }) {
+                    Text("Tempo \u{2669} = \(Int(session.song.tempo.rounded()))  \u{2022}  \(session.song.key.displayName)  \u{2022}  \(session.song.timeSignature.label)")
+                        .font(Theme.serifItalic(14))
+                        .foregroundColor(Theme.ink2)
+                        .lineLimit(1)
+                        .fixedSize(horizontal: true, vertical: false)
+                }
+                .buttonStyle(.plain)
             }
-            .buttonStyle(.plain)
         }
-        .frame(minWidth: 150, maxWidth: 260, alignment: .leading)
+        .frame(minWidth: 120, maxWidth: 260, alignment: .leading)
     }
 
     private var transport: some View {
@@ -88,18 +98,21 @@ struct HeaderView: View {
         }
     }
 
-    private var viewSwitch: some View {
-        HStack(spacing: 16) {
+    private func viewSwitch(compact: Bool) -> some View {
+        HStack(spacing: compact ? 6 : 16) {
             ForEach(ViewMode.allCases) { mode in
                 Button(action: { session.viewMode = mode }) {
                     VStack(spacing: 3) {
                         Text(mode.rawValue)
-                            .font(Theme.serifItalic(18))
+                            .font(Theme.serifItalic(compact ? 16 : 18))
+                            .lineLimit(1)
+                            .fixedSize(horizontal: true, vertical: false)
                             .foregroundColor(session.viewMode == mode ? Theme.ink : Theme.ink2)
                         Rectangle()
                             .fill(session.viewMode == mode ? Theme.red : Color.clear)
                             .frame(height: 2)
                     }
+                    .padding(.horizontal, compact ? 4 : 8)
                     .frame(minWidth: 44, minHeight: 44)
                     .contentShape(Rectangle())
                 }
@@ -116,11 +129,15 @@ struct HeaderView: View {
             Button(action: { session.sheet = .bounce }) {
                 Text("Bounce")
                     .font(Theme.uiMedium(15))
-                    .foregroundColor(.white)
+                    .lineLimit(1)
+                    .fixedSize(horizontal: true, vertical: false)
+                    .foregroundColor(Theme.ink)
                     .padding(.horizontal, 16)
                     .frame(minHeight: 36)
-                    .background(RoundedRectangle(cornerRadius: 8).fill(Theme.ink))
+                    .background(Capsule().fill(Color.clear))
+                    .overlay(Capsule().stroke(Theme.ink, lineWidth: 1.5))
                     .frame(minHeight: 44)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
         }

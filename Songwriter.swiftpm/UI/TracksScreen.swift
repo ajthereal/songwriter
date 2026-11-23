@@ -2,7 +2,7 @@ import SwiftUI
 
 enum TimelineMetrics {
     static let rulerHeight: CGFloat = 104
-    static let trackHeight: CGFloat = 76
+    static let trackHeight: CGFloat = 62
     static let sectionRow: CGFloat = 28
     static let chordRow: CGFloat = 34
     static let numberRow: CGFloat = 22
@@ -15,6 +15,7 @@ struct TracksScreen: View {
     @State var request: ScrollRequest?
     @State var pinchBase: CGFloat?
     @State var tracker = ScrollTracker()
+    private let followTimer = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
 
     var leftWidth: CGFloat { hSize == .compact ? 128 : 230 }
 
@@ -55,13 +56,26 @@ struct TracksScreen: View {
         .simultaneousGesture(
             MagnificationGesture()
                 .onChanged { value in
-                    if pinchBase == nil { pinchBase = session.pxPerBeat }
-                    let base = pinchBase ?? session.pxPerBeat
-                    session.pxPerBeat = min(160, max(12, base * value))
+                    if pinchBase == nil { pinchBase = session.pxPerBar }
+                    let base = pinchBase ?? session.pxPerBar
+                    tracker.ignoreUntil = Date().addingTimeInterval(0.6)
+                    session.setZoom(pxPerBar: base * value)
                 }
                 .onEnded { _ in pinchBase = nil }
         )
-        .onChange(of: session.playingBar) { _, bar in followPlayhead(bar: bar) }
+        .onAppear {
+            let t = tracker
+            let s = session
+            t.onChange = { old, new in
+                guard s.isPlaying, s.followOn, !s.followPaused else { return }
+                guard Date() >= t.ignoreUntil, abs(new.x - old.x) > 1 else { return }
+                DispatchQueue.main.async { s.followPaused = true }
+            }
+        }
+        .onChange(of: session.pxPerBeat) { _, _ in
+            tracker.ignoreUntil = Date().addingTimeInterval(0.6)
+        }
+        .onReceive(followTimer) { _ in followTick() }
         .onChange(of: session.stoppedBeat) { _, beat in
             if !session.isPlaying { revealIfNeeded(beat: beat) }
         }
@@ -100,24 +114,35 @@ struct TracksScreen: View {
         }
     }
 
-    private func followPlayhead(bar: Int) {
-        guard session.isPlaying, bar >= 0 else { return }
-        let x = CGFloat(session.song.barStartBeat(bar)) * session.pxPerBeat
-        let scrollX = -tracker.offset.x
+    /// Logic-style catch: while playing, keep the playhead inside the visible lanes by scrolling
+    /// so it sits about 15% from the left whenever it passes 85% of the width or leaves on the left.
+    private func followTick() {
+        guard session.isPlaying, session.followOn, !session.followPaused else { return }
+        guard Date() >= tracker.ignoreUntil else { return }
         let visible = tracker.size.width - leftWidth
-        if visible <= 0 { return }
-        if x < scrollX || x > scrollX + visible - session.pxPerBeat * CGFloat(session.song.beatsPerBar) {
-            request = ScrollRequest(token: (request?.token ?? 0) + 1, x: max(0, x - 24), y: nil)
+        guard visible > 40 else { return }
+        let x = CGFloat(max(0, session.displayBeat())) * session.pxPerBeat
+        let scrollX = max(0, -tracker.offset.x)
+        let rel = x - scrollX
+        let maxScroll = max(0, contentWidth + leftWidth - tracker.size.width)
+        if rel < 0 || (rel > visible * 0.85 && scrollX < maxScroll - 1) {
+            scroll(toPlayheadX: x, visible: visible)
         }
     }
 
+    private func scroll(toPlayheadX x: CGFloat, visible: CGFloat) {
+        let target = max(0, x - visible * 0.15)
+        tracker.ignoreUntil = Date().addingTimeInterval(0.5)
+        request = ScrollRequest(token: (request?.token ?? 0) + 1, x: target, y: nil)
+    }
+
     private func revealIfNeeded(beat: Double) {
-        let x = CGFloat(beat) * session.pxPerBeat
-        let scrollX = -tracker.offset.x
         let visible = tracker.size.width - leftWidth
         if visible <= 0 { return }
+        let x = CGFloat(max(0, beat)) * session.pxPerBeat
+        let scrollX = max(0, -tracker.offset.x)
         if x < scrollX || x > scrollX + visible {
-            request = ScrollRequest(token: (request?.token ?? 0) + 1, x: max(0, x - 40), y: nil)
+            scroll(toPlayheadX: x, visible: visible)
         }
     }
 }
@@ -139,6 +164,8 @@ struct RulerCorner: View {
             .padding(.leading, 16)
             .padding(.top, 14)
         }
+        .contentShape(Rectangle())
+        .onTapGesture { session.sheet = .tempo }
         .overlay(alignment: .bottom) { Rectangle().fill(Theme.line).frame(height: 1) }
         .overlay(alignment: .trailing) { Rectangle().fill(Theme.line).frame(width: 1) }
     }

@@ -10,11 +10,11 @@ struct CircleToggle: View {
         Button(action: action) {
             Text(label)
                 .font(Theme.uiSemibold(12))
-                .foregroundColor(isOn ? .white : Theme.ink2)
+                .foregroundColor(isOn ? Theme.onAccent : Theme.ink2)
                 .frame(width: 26, height: 26)
                 .background(Circle().fill(isOn ? onColor : Color.clear))
                 .overlay(Circle().stroke(isOn ? onColor : Theme.line, lineWidth: 1.2))
-                .frame(width: 44, height: 44)
+                .frame(width: 40, height: 44)
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -31,7 +31,7 @@ struct ArmButton: View {
                 Circle().stroke(Theme.red, lineWidth: 1.6).frame(width: 24, height: 24)
                 Circle().fill(Theme.red).frame(width: 12, height: 12).opacity(isOn ? 1 : 0.0)
             }
-            .frame(width: 44, height: 44)
+            .frame(width: 40, height: 44)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -48,9 +48,11 @@ struct PillButton: View {
         Button(action: action) {
             Text(title)
                 .font(Theme.uiMedium(14))
-                .foregroundColor(isOn ? .white : Theme.ink)
+                .lineLimit(1)
+                .fixedSize(horizontal: true, vertical: false)
+                .foregroundColor(isOn ? Theme.onAccent : Theme.ink)
                 .padding(.horizontal, 14)
-                .frame(minWidth: 56, minHeight: 34)
+                .frame(minHeight: 34)
                 .background(Capsule().fill(isOn ? Theme.red : Color.clear))
                 .overlay(Capsule().stroke(isOn ? Theme.red : Theme.line, lineWidth: 1.2))
                 .frame(minHeight: 44)
@@ -86,17 +88,20 @@ struct TextActionButton: View {
     var systemName: String? = nil
     var prominent: Bool = false
     var enabled: Bool = true
+    var showTitle: Bool = true
     var action: () -> Void
 
     var body: some View {
         Button(action: action) {
             HStack(spacing: 6) {
                 if let s = systemName { Image(systemName: s).font(.system(size: 14, weight: .medium)) }
-                Text(title).font(Theme.uiMedium(15))
+                if showTitle || systemName == nil {
+                    Text(title).font(Theme.uiMedium(15)).lineLimit(1).fixedSize(horizontal: true, vertical: false)
+                }
             }
-            .foregroundColor(prominent ? .white : (enabled ? Theme.ink : Theme.ink2.opacity(0.5)))
+            .foregroundColor(prominent ? Theme.onAccent : (enabled ? Theme.ink : Theme.ink2.opacity(0.5)))
             .padding(.horizontal, 14)
-            .frame(minHeight: 36)
+            .frame(minWidth: showTitle ? 0 : 40, minHeight: 36)
             .background(RoundedRectangle(cornerRadius: 8).fill(prominent ? Theme.red : Color.clear))
             .overlay(RoundedRectangle(cornerRadius: 8).stroke(prominent ? Theme.red : Theme.line, lineWidth: 1.2))
             .frame(minHeight: 44)
@@ -104,6 +109,7 @@ struct TextActionButton: View {
         }
         .buttonStyle(.plain)
         .disabled(!enabled)
+        .accessibilityLabel(title)
     }
 }
 

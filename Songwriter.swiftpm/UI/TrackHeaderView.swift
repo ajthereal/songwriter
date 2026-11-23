@@ -12,29 +12,33 @@ struct TrackHeaderView: View {
             Rectangle().fill(palette.caption).frame(width: 5)
             VStack(alignment: .leading, spacing: 1) {
                 Text(track.name)
-                    .font(Theme.uiSemibold(16))
+                    .font(Theme.uiSemibold(15))
                     .foregroundColor(Theme.ink)
                     .lineLimit(1)
+                    .minimumScaleFactor(0.85)
                 Text(subtitle)
-                    .font(Theme.serifItalic(13))
+                    .font(Theme.serifItalic(12))
                     .foregroundColor(Theme.ink2)
                     .lineLimit(1)
-                HStack(spacing: -6) {
-                    CircleToggle(label: "M", isOn: track.muted, onColor: Color(red: 0.78, green: 0.55, blue: 0.1)) {
-                        session.toggleMute(track.id)
-                    }
-                    CircleToggle(label: "S", isOn: track.solo, onColor: Color(red: 0.2, green: 0.5, blue: 0.75)) {
-                        session.toggleSolo(track.id)
-                    }
-                    ArmButton(isOn: armed) { session.toggleArm(track.id) }
-                    if armed && track.kind == .audio {
-                        LevelMeter(meter: session.meter).frame(width: 40).padding(.leading, 8)
-                    }
-                }
-                .frame(height: 32)
+                    .minimumScaleFactor(0.8)
             }
             .padding(.leading, 10)
-            Spacer(minLength: 0)
+            Spacer(minLength: 2)
+            HStack(spacing: -2) {
+                CircleToggle(label: "M", isOn: track.muted, onColor: Theme.muteOn) {
+                    session.toggleMute(track.id)
+                }
+                CircleToggle(label: "S", isOn: track.solo, onColor: Theme.soloOn) {
+                    session.toggleSolo(track.id)
+                }
+                ArmButton(isOn: armed) { session.toggleArm(track.id) }
+            }
+            .padding(.trailing, 4)
+        }
+        .overlay(alignment: .bottomLeading) {
+            if armed && track.kind == .audio {
+                LevelMeter(meter: session.meter).frame(width: 80).padding(.leading, 16).padding(.bottom, 3)
+            }
         }
         .frame(height: TimelineMetrics.trackHeight)
         .background(armed || selected ? Theme.armed : Theme.paper)
@@ -51,7 +55,7 @@ struct TrackHeaderView: View {
 
     private var subtitle: String {
         if track.kind == .instrument && track.follow {
-            return "\(track.instrument.displayName) \u{2022} follows chords"
+            return "\(track.instrument.displayName) \u{2022} follows"
         }
         return track.instrumentLabel
     }

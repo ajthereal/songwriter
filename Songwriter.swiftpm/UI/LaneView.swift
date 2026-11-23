@@ -82,7 +82,7 @@ struct FollowRegionView: View {
                 Spacer()
             }
             .frame(height: 16)
-            .background(palette.caption.opacity(0.85))
+            .background(palette.caption)
             .clipShape(UnevenRoundedRectangle(topLeadingRadius: 5, bottomLeadingRadius: 0, bottomTrailingRadius: 0, topTrailingRadius: 5))
         }
         .frame(width: w, height: TimelineMetrics.trackHeight - 8)

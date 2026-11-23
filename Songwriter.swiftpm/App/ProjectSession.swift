@@ -54,7 +54,9 @@ final class ProjectSession: ObservableObject, Identifiable {
     }
     @Published var selectedRegionID: UUID?
     @Published var snap: SnapMode
-    @Published var pxPerBeat: CGFloat = 40
+    @Published var pxPerBeat: CGFloat = 16
+    @Published var followOn = true
+    @Published var followPaused = false
     @Published var editorOpen = true
     @Published var armedTrackID: UUID?
     @Published var cycleOn = false
@@ -87,6 +89,9 @@ final class ProjectSession: ObservableObject, Identifiable {
         self.song = song
         projectID = song.id
         snap = AppSettings.shared.defaultSnap
+        let savedZoom = UserDefaults.standard.double(forKey: "zoomPxPerBar.\(song.id.uuidString)")
+        let barPx = savedZoom > 0 ? CGFloat(savedZoom) : ProjectSession.defaultBarPx
+        pxPerBeat = min(ProjectSession.maxBarPx, max(ProjectSession.minBarPx, barPx)) / CGFloat(max(1, song.beatsPerBar))
         engine = AudioEngine(projectAudioDir: ProjectStore.shared.audioDir(song.id))
         selectedTrackID = song.tracks.first(where: { $0.kind == .instrument })?.id ?? song.tracks.first?.id
         lastLiveInstrumentTrack = song.tracks.first(where: { $0.kind == .instrument })?.id
@@ -348,6 +353,21 @@ final class ProjectSession: ObservableObject, Identifiable {
         engine.setLiveTarget(trackID: lastLiveInstrumentTrack)
     }
 
+    // MARK: - Zoom
+
+    static let defaultBarPx: CGFloat = 64
+    static let minBarPx: CGFloat = 24
+    static let maxBarPx: CGFloat = 400
+
+    var pxPerBar: CGFloat { pxPerBeat * CGFloat(max(1, song.beatsPerBar)) }
+
+    /// Sets the zoom in points per bar (clamped) and remembers it for this project.
+    func setZoom(pxPerBar bar: CGFloat) {
+        let clamped = min(ProjectSession.maxBarPx, max(ProjectSession.minBarPx, bar))
+        pxPerBeat = clamped / CGFloat(max(1, song.beatsPerBar))
+        UserDefaults.standard.set(Double(clamped), forKey: "zoomPxPerBar.\(projectID.uuidString)")
+    }
+
     // MARK: - Transport
 
     func play() {
@@ -360,6 +380,7 @@ final class ProjectSession: ObservableObject, Identifiable {
                               clickVolume: Float(settings.metronomeVolume), recordAudioTrack: nil, recordMIDI: false,
                               latencySeconds: 0)
         recordStartBeat = from
+        followPaused = false
         isPlaying = true
         engine.play(req)
     }
@@ -439,6 +460,7 @@ final class ProjectSession: ObservableObject, Identifiable {
                               latencySeconds: latency)
         recordingTrackID = t.id
         recordStartBeat = from
+        followPaused = false
         isPlaying = true
         isRecording = true
         engine.play(req)

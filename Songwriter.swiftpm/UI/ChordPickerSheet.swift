@@ -101,7 +101,7 @@ struct ChordPickerSheet: View {
         Button(action: action) {
             Text(title)
                 .font(Theme.uiMedium(15))
-                .foregroundColor(selected ? .white : Theme.ink)
+                .foregroundColor(selected ? Theme.onAccent : Theme.ink)
                 .frame(maxWidth: .infinity, minHeight: 44)
                 .background(RoundedRectangle(cornerRadius: 8).fill(selected ? Theme.red : Color.clear))
                 .overlay(RoundedRectangle(cornerRadius: 8).stroke(selected ? Theme.red : Theme.line, lineWidth: 1.2))

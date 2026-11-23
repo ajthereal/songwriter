@@ -4,31 +4,45 @@ struct EditorView: View {
     @ObservedObject var session: ProjectSession
 
     var body: some View {
-        if !session.editorOpen {
-            HStack {
-                Text("Editor").font(Theme.serifItalic(14)).foregroundColor(Theme.ink2)
-                Spacer()
-                IconButton(systemName: "chevron.up", label: "Open editor") { session.editorOpen = true }
-            }
-            .padding(.horizontal, 14)
-            .frame(height: 44)
-            .background(Theme.panel)
-            .overlay(alignment: .top) { Rectangle().fill(Theme.line).frame(height: 1) }
-        } else {
-            VStack(spacing: 0) {
-                if let sel = session.selectedRegion {
-                    if sel.region.kind == .midi {
-                        PianoRollView(session: session, trackID: sel.track.id, regionID: sel.region.id)
-                    } else {
-                        TakesView(session: session, trackID: sel.track.id, regionID: sel.region.id)
-                    }
-                } else {
-                    placeholder
+        Group {
+            if !session.editorOpen {
+                HStack {
+                    Text(session.selectedRegion == nil
+                         ? "Editor \u{2014} tap a region to edit its notes or takes"
+                         : "Editor")
+                        .font(Theme.serifItalic(14)).foregroundColor(Theme.ink2)
+                        .lineLimit(1)
+                    Spacer()
+                    IconButton(systemName: "chevron.up", label: "Open editor") { session.editorOpen = true }
                 }
+                .padding(.horizontal, 14)
+                .frame(height: 44)
+                .background(Theme.panel)
+                .contentShape(Rectangle())
+                .onTapGesture { session.editorOpen = true }
+                .overlay(alignment: .top) { Rectangle().fill(Theme.line).frame(height: 1) }
+            } else {
+                VStack(spacing: 0) {
+                    if let sel = session.selectedRegion {
+                        if sel.region.kind == .midi {
+                            PianoRollView(session: session, trackID: sel.track.id, regionID: sel.region.id)
+                        } else {
+                            TakesView(session: session, trackID: sel.track.id, regionID: sel.region.id)
+                        }
+                    } else {
+                        placeholder
+                    }
+                }
+                .frame(height: 236)
+                .background(Theme.panel)
+                .overlay(alignment: .top) { Rectangle().fill(Theme.line).frame(height: 1) }
             }
-            .frame(height: 236)
-            .background(Theme.panel)
-            .overlay(alignment: .top) { Rectangle().fill(Theme.line).frame(height: 1) }
+        }
+        .onChange(of: session.selectedRegionID) { _, new in
+            session.editorOpen = (new != nil)
+        }
+        .onAppear {
+            if session.selectedRegionID == nil { session.editorOpen = false }
         }
     }
 

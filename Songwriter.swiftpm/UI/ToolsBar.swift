@@ -3,58 +3,128 @@ import SwiftUI
 struct ToolsBar: View {
     @ObservedObject var session: ProjectSession
     @State var loopTimes = 4
+    @State var showMIDIPopover = false
+    @State var showBluetooth = false
 
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-                Text("Snap").font(Theme.serifItalic(14)).foregroundColor(Theme.ink2)
-                Picker("Snap", selection: $session.snap) {
-                    ForEach(SnapMode.allCases) { m in Text(m.label).tag(m) }
-                }
-                .pickerStyle(.segmented)
-                .frame(width: 220)
+        ViewThatFits(in: .horizontal) {
+            content(compact: false)
+            content(compact: true)
+            ScrollView(.horizontal, showsIndicators: false) { content(compact: true) }
+        }
+        .frame(height: 48)
+        .background(Theme.panel)
+        .overlay(alignment: .top) { Rectangle().fill(Theme.line).frame(height: 1) }
+        .sheet(isPresented: $showBluetooth, onDismiss: { MIDIInput.shared.rescan() }) {
+            BluetoothMIDIView(onDone: { showBluetooth = false })
+        }
+    }
 
-                divider
-                IconButton(systemName: "minus.magnifyingglass", label: "Zoom out") {
-                    session.pxPerBeat = max(12, session.pxPerBeat / 1.25)
+    private func content(compact: Bool) -> some View {
+        HStack(spacing: 8) {
+            Text("Snap").font(Theme.serifItalic(14)).foregroundColor(Theme.ink2)
+                .lineLimit(1).fixedSize(horizontal: true, vertical: false)
+            Picker("Snap", selection: $session.snap) {
+                ForEach(SnapMode.allCases) { m in Text(m.label).tag(m) }
+            }
+            .pickerStyle(.segmented)
+            .frame(width: 200)
+
+            divider
+            IconButton(systemName: "minus.magnifyingglass", label: "Zoom out") {
+                session.setZoom(pxPerBar: session.pxPerBar / 1.25)
+            }
+            IconButton(systemName: "plus.magnifyingglass", label: "Zoom in") {
+                session.setZoom(pxPerBar: session.pxPerBar * 1.25)
+            }
+            TextActionButton(title: "Follow", systemName: "arrow.right.to.line",
+                             prominent: session.followOn && !session.followPaused, showTitle: !compact) {
+                toggleFollow()
+            }
+            divider
+            TextActionButton(title: "Split", systemName: "scissors", enabled: regionSelected, showTitle: !compact) { split() }
+            TextActionButton(title: "Duplicate", systemName: "plus.square.on.square", enabled: regionSelected, showTitle: !compact) { duplicate() }
+            Menu {
+                ForEach([2, 4, 8, 16], id: \.self) { n in
+                    Button("Loop \(n) times") { loop(n) }
                 }
-                IconButton(systemName: "plus.magnifyingglass", label: "Zoom in") {
-                    session.pxPerBeat = min(160, session.pxPerBeat * 1.25)
-                }
-                divider
-                TextActionButton(title: "Split", systemName: "scissors", enabled: regionSelected) { split() }
-                TextActionButton(title: "Duplicate", systemName: "plus.square.on.square", enabled: regionSelected) { duplicate() }
-                Menu {
-                    ForEach([2, 4, 8, 16], id: \.self) { n in
-                        Button("Loop \(n) times") { loop(n) }
+            } label: {
+                HStack(spacing: 6) {
+                    Image(systemName: "repeat")
+                    if !compact {
+                        Text("Loop").font(Theme.uiMedium(15)).lineLimit(1).fixedSize(horizontal: true, vertical: false)
                     }
-                } label: {
+                }
+                .foregroundColor(regionSelected ? Theme.ink : Theme.ink2.opacity(0.5))
+                .padding(.horizontal, 14)
+                .frame(minHeight: 36)
+                .overlay(RoundedRectangle(cornerRadius: 8).stroke(Theme.line, lineWidth: 1.2))
+                .frame(minHeight: 44)
+            }
+            .disabled(!regionSelected)
+            .accessibilityLabel("Loop")
+            TextActionButton(title: "Delete", systemName: "trash", enabled: regionSelected, showTitle: !compact) { delete() }
+            divider
+            PillButton(title: "Chords", isOn: session.showChordPad) { session.showChordPad.toggle() }
+            PillButton(title: "Keys", isOn: session.showKeyboard) { session.showKeyboard.toggle() }
+            midiChip
+        }
+        .padding(.horizontal, 12)
+    }
+
+    private var midiChip: some View {
+        Button(action: { showMIDIPopover = true }) {
+            HStack(spacing: 5) {
+                Image(systemName: "pianokeys").font(.system(size: 14, weight: .medium))
+                Text(session.midiSourceCount > 0 ? "\(session.midiSourceCount) MIDI" : "No MIDI")
+                    .font(Theme.uiMedium(14))
+                    .lineLimit(1)
+                    .fixedSize(horizontal: true, vertical: false)
+            }
+            .foregroundColor(session.midiSourceCount > 0 ? Theme.ink : Theme.ink2)
+            .padding(.horizontal, 12)
+            .frame(minHeight: 34)
+            .overlay(Capsule().stroke(session.midiSourceCount > 0 ? Theme.ink2 : Theme.line, lineWidth: 1.2))
+            .frame(minHeight: 44)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("MIDI devices")
+        .popover(isPresented: $showMIDIPopover) {
+            VStack(alignment: .leading, spacing: 12) {
+                Text(midiStatus)
+                    .font(Theme.serifItalic(15))
+                    .foregroundColor(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                Button(action: {
+                    showMIDIPopover = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { showBluetooth = true }
+                }) {
                     HStack(spacing: 6) {
-                        Image(systemName: "repeat")
-                        Text("Loop").font(Theme.uiMedium(15))
+                        Image(systemName: "dot.radiowaves.left.and.right")
+                        Text("Bluetooth MIDI").font(Theme.uiMedium(15))
                     }
-                    .foregroundColor(regionSelected ? Theme.ink : Theme.ink2.opacity(0.5))
+                    .foregroundColor(Theme.ink)
                     .padding(.horizontal, 14)
                     .frame(minHeight: 36)
                     .overlay(RoundedRectangle(cornerRadius: 8).stroke(Theme.line, lineWidth: 1.2))
                     .frame(minHeight: 44)
                 }
-                .disabled(!regionSelected)
-                TextActionButton(title: "Delete", systemName: "trash", enabled: regionSelected) { delete() }
-                divider
-                PillButton(title: "Chords", isOn: session.showChordPad) { session.showChordPad.toggle() }
-                PillButton(title: "Keys", isOn: session.showKeyboard) { session.showKeyboard.toggle() }
-                Text(midiStatus)
-                    .font(Theme.serifItalic(13))
-                    .foregroundColor(Theme.ink2)
-                    .lineLimit(1)
-                BluetoothMIDIButton()
+                .buttonStyle(.plain)
             }
-            .padding(.horizontal, 12)
+            .padding(16)
+            .frame(width: 300)
+            .presentationCompactAdaptation(.popover)
         }
-        .frame(height: 48)
-        .background(Theme.panel)
-        .overlay(alignment: .top) { Rectangle().fill(Theme.line).frame(height: 1) }
+    }
+
+    private func toggleFollow() {
+        if session.followOn && session.followPaused {
+            session.followPaused = false
+        } else {
+            session.followOn.toggle()
+            session.followPaused = false
+        }
     }
 
     private var divider: some View {
