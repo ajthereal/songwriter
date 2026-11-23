@@ -161,8 +161,6 @@ struct LyricsBlock: View {
                     .frame(minHeight: 120)
                     .background(RoundedRectangle(cornerRadius: 8).fill(Theme.panel))
                     .overlay(RoundedRectangle(cornerRadius: 8).stroke(focus.wrappedValue == sectionID ? Theme.red : Theme.line, lineWidth: 1.2))
-                    .contentShape(Rectangle())
-                    .onTapGesture { focus.wrappedValue = sectionID }
                     .onAppear {
                         if !loaded { text = s.lyrics; loaded = true }
                     }
