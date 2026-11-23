@@ -376,6 +376,22 @@ extension Song {
         tracks[ti].regions.sort { $0.startBeat < $1.startBeat }
     }
 
+    /// Makes room on a track: regions are split at the range edges and anything inside the range is removed.
+    mutating func clearRange(trackID: UUID, from: Double, to: Double) {
+        guard let ti = trackIndex(trackID), to - from > 1e-6 else { return }
+        for r in tracks[ti].regions {
+            if r.startBeat < from - 1e-6 && r.endBeat > from + 1e-6 {
+                splitRegion(trackID: trackID, regionID: r.id, atBeat: from)
+            }
+        }
+        for r in tracks[ti].regions {
+            if r.startBeat < to - 1e-6 && r.endBeat > to + 1e-6 {
+                splitRegion(trackID: trackID, regionID: r.id, atBeat: to)
+            }
+        }
+        tracks[ti].regions.removeAll { $0.startBeat >= from - 1e-6 && $0.endBeat <= to + 1e-6 }
+    }
+
     mutating func deleteRegion(trackID: UUID, regionID: UUID) {
         guard let ti = trackIndex(trackID) else { return }
         tracks[ti].regions.removeAll { $0.id == regionID }
@@ -403,6 +419,57 @@ enum Quantizer {
             m.start = max(0, (n.start / grid).rounded() * grid)
             m.length = max(grid / 2, end - m.start)
             return m
+        }
+    }
+}
+
+
+// MARK: - Region trimming
+
+extension Region {
+    /// Moves the start edge by `delta` beats (positive shortens). Notes keep their absolute positions.
+    mutating func trimStart(by delta: Double, secondsPerBeat: Double, minLength: Double = 0.25) {
+        var d = delta
+        if lengthBeats - d < minLength { d = lengthBeats - minLength }
+        if startBeat + d < 0 { d = -startBeat }
+        if abs(d) < 1e-9 { return }
+        if kind == .audio {
+            let newOffset = audioOffset + d * secondsPerBeat
+            let base = activeTakeValue?.offset ?? 0
+            if base + newOffset < 0 {
+                d = -(base + audioOffset) / secondsPerBeat
+            }
+            audioOffset += d * secondsPerBeat
+        }
+        startBeat += d
+        lengthBeats -= d
+        if kind == .midi {
+            var out: [Note] = []
+            for n in notes {
+                var m = n
+                m.start -= d
+                if m.start + m.length <= 1e-9 { continue }
+                if m.start < 0 {
+                    m.length += m.start
+                    m.start = 0
+                }
+                out.append(m)
+            }
+            notes = out
+            pedal = pedal.compactMap { p in
+                let b = p.beat - d
+                return b >= 0 ? PedalEvent(beat: b, down: p.down) : nil
+            }
+        }
+    }
+
+    /// Sets the region length (the end edge), clipping notes.
+    mutating func trimEnd(toLength newLength: Double, minLength: Double = 0.25) {
+        let len = max(minLength, newLength)
+        if kind == .midi && len < lengthBeats {
+            self = Song.clipped(self, toLength: len)
+        } else {
+            lengthBeats = len
         }
     }
 }

@@ -266,3 +266,56 @@ final class SunoPackTests: XCTestCase {
         XCTAssertEqual(SunoPack.tags(for: s), ["[Intro]", "[Verse 1]", "[Verse 2]", "[Pre-Chorus]", "[Chorus]"])
     }
 }
+
+final class ClearRangeTests: XCTestCase {
+    func testClearRangeSplitsAndRemoves() {
+        var s = Song(title: "T", tempo: 120)
+        var t = Track(name: "Vox", kind: .audio)
+        t.regions = [Region(name: "A", kind: .audio, startBeat: 0, lengthBeats: 16)]
+        s.tracks = [t]
+        s.clearRange(trackID: t.id, from: 4, to: 8)
+        let regs = s.tracks[0].regions
+        XCTAssertEqual(regs.count, 2)
+        XCTAssertEqual(regs[0].startBeat, 0, accuracy: 1e-9)
+        XCTAssertEqual(regs[0].endBeat, 4, accuracy: 1e-9)
+        XCTAssertEqual(regs[1].startBeat, 8, accuracy: 1e-9)
+        XCTAssertEqual(regs[1].endBeat, 16, accuracy: 1e-9)
+    }
+}
+
+final class TrimTests: XCTestCase {
+    func testTrimStartMidi() {
+        var r = Region(name: "r", kind: .midi, startBeat: 4, lengthBeats: 8, notes: [
+            Note(pitch: 60, start: 0, length: 1), Note(pitch: 62, start: 1, length: 2), Note(pitch: 64, start: 4, length: 1),
+        ])
+        r.trimStart(by: 2, secondsPerBeat: 0.5)
+        XCTAssertEqual(r.startBeat, 6, accuracy: 1e-9)
+        XCTAssertEqual(r.lengthBeats, 6, accuracy: 1e-9)
+        XCTAssertEqual(r.notes.count, 2)                       // first note removed
+        XCTAssertEqual(r.notes[0].start, 0, accuracy: 1e-9)    // second note clipped at the new start
+        XCTAssertEqual(r.notes[0].length, 1, accuracy: 1e-9)
+        XCTAssertEqual(r.notes[1].start, 2, accuracy: 1e-9)
+    }
+
+    func testTrimStartAudioAdjustsOffset() {
+        var r = Region(name: "a", kind: .audio, startBeat: 0, lengthBeats: 8,
+                       takes: [Take(name: "t", fileName: "f.caf", offset: 0.2, duration: 10)])
+        r.trimStart(by: 2, secondsPerBeat: 0.5)
+        XCTAssertEqual(r.audioOffset, 1.0, accuracy: 1e-9)
+        XCTAssertEqual(r.startBeat, 2, accuracy: 1e-9)
+        r.trimStart(by: -10, secondsPerBeat: 0.5)               // cannot extend before the start of the take
+        XCTAssertGreaterThanOrEqual(r.audioOffset + 0.2, -1e-9)
+        XCTAssertGreaterThanOrEqual(r.startBeat, 0)
+    }
+
+    func testTrimEnd() {
+        var r = Region(name: "r", kind: .midi, startBeat: 0, lengthBeats: 8, notes: [
+            Note(pitch: 60, start: 0, length: 1), Note(pitch: 62, start: 6, length: 4),
+        ])
+        r.trimEnd(toLength: 7)
+        XCTAssertEqual(r.lengthBeats, 7, accuracy: 1e-9)
+        XCTAssertEqual(r.notes[1].length, 1, accuracy: 1e-9)
+        r.trimEnd(toLength: 0.01)
+        XCTAssertEqual(r.lengthBeats, 0.25, accuracy: 1e-9)
+    }
+}
