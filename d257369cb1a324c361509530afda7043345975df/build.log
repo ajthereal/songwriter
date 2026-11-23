@@ -1,0 +1,7 @@
+== Xcode: /Applications/Xcode_26.3.0.app
+Xcode 26.3
+Build version 17C529
+swift-driver version: 1.127.15 Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
+Target: arm64-apple-macosx15.0
+== Branch: main  SHA: d257369cb1a324c361509530afda7043345975df
+== No Songwriter.swiftpm yet; skipping build
